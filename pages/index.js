@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="apple-touch-icon" href="/media/logo192.png" />
       </Head>
 
-      <h1>Hi it`s me Gloria!</h1>
+      <h1>Hi it`s me Gloria 22!</h1>
     </div>
   );
 }
