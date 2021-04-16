@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "Gilroy-ExtraBold";
+  src: url("../assets/fonts/Gilroy-ExtraBold.otf");
+}
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("../assets/fonts/Gilroy-Light.otf");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/Space_Grotesk.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #14171b;
+  color: white;
+  font-family: "Gilroy-Light";
+  letter-spacing: 2px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 150%;
+  }
+}
+//Call to action button
+.CTA {
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: 18px;
+}
+::-webkit-scrollbar {
+  background: black;
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #14171b;
+  border-radius: 4px;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+}
+
+.FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FlexCenterColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 400;
+}
+h1 {
+  font-family: "Gilroy-ExtraBold";
+}
+//titles like VALUES in about me
+h5 {
+  font-size: 28px;
+  margin: 30px 0;
+}
+h3 {
+  font-family: "Gilroy-ExtraBold";
+  font-size: 24px;
+}
+
+/* mobile mode*/
+@media only screen and (max-width: 767px) {
+  //basics - padding, flex, h1, p, etc.
+  .setPadding {
+    padding: 30px 4%;
+  }
+  h1 {
+    font-size: 32px;
+  }
+
+  //Travel app
+  .TravelAppRes {
+    h1 {
+      font-size: 32px !important;
+      font-weight: 800;
+      line-height: 52px;
+      letter-spacing: 0.015em;
+    }
+
+    p {
+      font-size: 16px !important;
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: 0.015em;
+    }
+  }
+}
+
+/* tablet mode
+*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  //basics - padding, flex, h1, p, etc.
+  .setPadding {
+    padding: 80px 5%;
+  }
+  h1 {
+    font-size: 48px !important;
+  }
+  h2 {
+    font-size: 36px !important;
+  }
+  h3 {
+    font-size: 28px !important;
+  }
+  p {
+    font-size: 20px;
+    width: 80%;
+  }
+  h5 {
+    font-size: 48px !important;
+  }
+
+  //Hero
+
+  .name,
+  .create {
+    font-size: 26px !important;
+  }
+  span.create {
+    padding: 0 5px 2px !important;
+  }
+  .create {
+    padding: 0 !important;
+    padding-top: 3px !important;
+  }
+  .NavStylesRes {
+    div {
+      font-size: 24px !important;
+    }
+  }
+  .lines {
+    top: 490px !important;
+  }
+
+  //About me
+  .AboutMeRes {
+    padding-top: 0 !important;
+    .header,
+    .content {
+      flex-direction: column;
+    }
+  }
+  .imageParaAbout {
+    width: 90vw !important;
+
+    .ImageContainer {
+      padding-bottom: 0px;
+      img {
+        width: 450px;
+      }
+    }
+  }
+
+  //Work sections
+  .PlannerRes {
+    flex-direction: column !important;
+    .ImageCompStylesRes {
+      width: 85vw !important;
+    }
+    .para {
+      text-align: left !important;
+      margin-left: 0 !important;
+      h3 {
+        margin-top: 50px;
+      }
+    }
+    .ImageCompStylesRes {
+      width: 90vw !important;
+      img {
+        width: 80vw !important;
+      }
+    }
+  }
+  .TelenorRes {
+    margin: 0px !important;
+    flex-direction: column !important;
+    align-items: center;
+
+    .ImageCompStylesRes {
+      width: 90vw !important;
+      img {
+        width: 80vw !important;
+      }
+    }
+    .para {
+      margin-bottom: 40px !important;
+      h3 {
+        margin-top: 50px;
+      }
+      p {
+        margin-bottom: 30px;
+      }
+    }
+    .Telenor {
+      margin-left: 0px !important;
+      padding-top: 60px;
+    }
+  }
+}
+
+//1064px
+@media only screen and (min-width: 1023px) {
+  //basics - padding, flex, h1, p, etc.
+  .setPadding {
+    padding: 50px 10%;
+  }
+  h1 {
+    font-size: 44px !important;
+  }
+  h2 {
+    font-size: 36px !important;
+  }
+  h3 {
+    font-size: 32px !important;
+  }
+  //Main titles in Telenor page
+  h5 {
+    font-size: 44px;
+  }
+  p {
+    font-size: 18px !important;
+  }
+  .NavStylesRes {
+    div {
+      font-size: 24px !important;
+    }
+  }
+}

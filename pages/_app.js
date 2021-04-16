@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
@@ -12,6 +12,10 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:description" content="Gloria Rusenova Portfolio" />
         <meta property="og:image" content="/media/thumbnail.jpg" />
         <link rel="apple-touch-icon" href="/media/logo192.png" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
       </Head>
       <Component {...pageProps} />
     </>
