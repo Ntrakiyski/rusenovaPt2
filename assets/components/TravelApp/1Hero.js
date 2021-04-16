@@ -74,7 +74,7 @@ const Styles = styled(motion.div)`
       max-width: calc(50vw - 20%);
     }
     img {
-      max-width: calc(50vw - 20%);
+      max-width: 550px;
     }
   }
 `;

@@ -33,16 +33,16 @@ const AboutMe = () => {
       initial="hidden"
       animate="show"
     >
+      {Width1023 ? (
+        <Nav bgColor="#14171b" />
+      ) : (
+        <NavRes
+          changeLoc={changeLoc}
+          setChangeLoc={setChangeLoc}
+          bgColor="#14171b"
+        />
+      )}
       <div className="content">
-        {Width1023 ? (
-          <Nav bgColor="#14171b" />
-        ) : (
-          <NavRes
-            changeLoc={changeLoc}
-            setChangeLoc={setChangeLoc}
-            bgColor="#14171b"
-          />
-        )}
         {!changeLoc ? (
           <>
             <Heading />
@@ -69,7 +69,7 @@ const AboutMe = () => {
             />
             <MyStory />
             <Transition />
-            
+
             <div className="foot">
               <FooterNavi
                 number="01"

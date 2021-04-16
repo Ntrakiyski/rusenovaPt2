@@ -17,56 +17,27 @@ export const Nav = ({ bgColor }) => {
   };
 
   //styles
-  const NavStyles = styled(motion.div)`
-    position: sticky;
-    z-index: 1000;
-
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    background: ${bgColor};
-
-    .nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin-right: 100px;
-      width: 600px;
-      div {
-        cursor: pointer;
-      }
-    }
-    .logo {
-      font-weight: 700;
-      font-family: "Gilroy-ExtraBold";
-      margin-left: 100px;
-      cursor: pointer;
-    }
-
-    div {
-      font-size: 18px;
-      font-weight: 700;
-      padding: 15px;
-    }
-  `;
-
-  //styles
   return (
-    <NavStyles className="NavStylesRes ">
+    <div style={{ background: `${bgColor}` }} className="main">
       <Link href={"/"}>
         <div onClick={ScrollHome} className="logo">
-          gloria
+          <p>gloria</p>
+          <style>
+            {`
+          .logo {
+            font-weight: 700;
+            font-family: "Gilroy-ExtraBold";
+            margin-left: 100px;
+            cursor: pointer;
+            font-size:24px;
+          }`}
+          </style>
         </div>
       </Link>
       <div className="nav">
         <Link href={"/"}>
           <motion.div
+            className="navItem"
             onClick={Scroll}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
@@ -76,7 +47,7 @@ export const Nav = ({ bgColor }) => {
         </Link>
         <Link href={"/about"}>
           <motion.div
-            className="middle"
+            className="navItem middle"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -85,11 +56,91 @@ export const Nav = ({ bgColor }) => {
         </Link>
 
         <a href="/media/GloriaPdf.pdf" target="_blank">
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <motion.div
+            className="navItem"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Resume
           </motion.div>
         </a>
+        <style>
+          {`
+            .nav {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              width: 600px;
+            }
+          `}
+        </style>
       </div>
-    </NavStyles>
+      <style>
+        {`
+          
+          .navItem {
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 15px;
+          }
+        `}
+      </style>
+      <style>
+        {`
+          .main {
+            position: sticky;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top:30px;
+            background: ${bgColor}
+          }
+        `}
+      </style>
+    </div>
   );
 };
+
+//styles
+// const NavStyles = styled(motion.div)`
+//   position: sticky;
+//   z-index: 1000;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   .nav {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     width: 600px;
+//     div {
+//       cursor: pointer;
+//     }
+//   }
+//   .logo {
+//     font-weight: 700;
+//     font-family: "Gilroy-ExtraBold";
+//     margin-left: 100px;
+//     cursor: pointer;
+//   }
+
+//   div {
+//     font-size: 18px;
+//     font-weight: 700;
+//     padding: 15px;
+//   }
+// `;

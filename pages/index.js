@@ -21,17 +21,9 @@ function Index() {
   const [changeLoc, setChangeLoc] = useState(false);
   return (
     <div>
-      {Width1023 ? (
-        <Nav bgColor="#14171b" />
-      ) : (
-        <NavRes
-          changeLoc={changeLoc}
-          setChangeLoc={setChangeLoc}
-          bgColor="#14171b"
-        />
-      )}
       {!changeLoc ? (
         <>
+          <Nav bgColor="#14171b" />
           <Hero />
           <PlannerApp />
           <TelenorWork />

@@ -42,27 +42,29 @@ const TelenorPage = () => {
           bgColor="#14171b"
         />
       )}
-      {!changeLoc ? (
-        <>
-          <Heading />
-          <ThreeYears />
-          <MyRole />
-          <Projects />
-          <div className="foot">
-            <FooterNavi number="01" menu="About" to="/about" />
-            <FooterNavi number="02" menu="Projects" to="/" />
-            <FooterNavi
-              number="03"
-              menu="Resume"
-              to="/media/GloriaPdf.pdf"
-              target={"_blank"}
-            />
-          </div>
-        </>
-      ) : (
-        <Hamburger />
-      )}
-      <Footer />
+      <div className="content">
+        {!changeLoc ? (
+          <>
+            <Heading />
+            <ThreeYears />
+            <MyRole />
+            <Projects />
+            <div className="foot">
+              <FooterNavi number="01" menu="About" to="/about" />
+              <FooterNavi number="02" menu="Projects" to="/" />
+              <FooterNavi
+                number="03"
+                menu="Resume"
+                to="/media/GloriaPdf.pdf"
+                target={"_blank"}
+              />
+            </div>
+          </>
+        ) : (
+          <Hamburger />
+        )}
+        <Footer />
+      </div>
     </Styles>
   );
 };
@@ -71,6 +73,12 @@ const Styles = styled(motion.div)`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
+
+  .content {
+    max-width: 1300px;
+    margin-top: 40px;
+  }
   //Main title - My experience...
   h5 {
     margin: 0 0 40px 0;

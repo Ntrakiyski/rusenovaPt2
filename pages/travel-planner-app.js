@@ -54,46 +54,56 @@ const TravelPage = () => {
           bgColor="#14171b"
         />
       )}
-      {!changeLoc ? (
-        <>
-          <Hero />
-          <TheProcess />
-          <LookingBack />
-          <ProblemStatement />
-          <Solution />
-          <Survey />
-          <Interviews />
-          <Emphaty />
-          <Persona />
-          <UserJourney />
-          <Functionalities />
-          <Architecture />
-          <Sketching />
-          <Styling />
-          <SeccondPart />
-        </>
-      ) : (
-        <Hamburger />
-      )}
-      <div className="footer">
-        <FooterNavi
-          number="01"
-          menu="Telenor experience"
-          to="/telenor-bulgaria"
-        />
-        <FooterNavi number="02" menu="About" to="/about" />
-        <FooterNavi
-          number="03"
-          menu="Resume"
-          to="/media/GloriaPdf.pdf"
-          target={"_blank"}
-        />
+      <div className="content">
+        {!changeLoc ? (
+          <>
+            <Hero />
+            <TheProcess />
+            <LookingBack />
+            <ProblemStatement />
+            <Solution />
+            <Survey />
+            <Interviews />
+            <Emphaty />
+            <Persona />
+            <UserJourney />
+            <Functionalities />
+            <Architecture />
+            <Sketching />
+            <Styling />
+            <SeccondPart />
+          </>
+        ) : (
+          <Hamburger />
+        )}
+        <div className="footer">
+          <FooterNavi
+            number="01"
+            menu="Telenor experience"
+            to="/telenor-bulgaria"
+          />
+          <FooterNavi number="02" menu="About" to="/about" />
+          <FooterNavi
+            number="03"
+            menu="Resume"
+            to="/media/GloriaPdf.pdf"
+            target={"_blank"}
+          />
+        </div>
       </div>
     </TravelAppStyles>
   );
 };
 
 const TravelAppStyles = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .content {
+    margin-top: 40px;
+    max-width: 1300px;
+  }
   .footer {
     margin-top: 40px;
   }

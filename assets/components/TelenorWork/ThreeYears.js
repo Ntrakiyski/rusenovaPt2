@@ -15,7 +15,7 @@ export const ThreeYears = () => {
         {Width1023 && (
           <div className="image">
             <img
-              src="/media/images/TelenorPresent"
+              src="/media/images/TelenorPresent.png"
               alt="telenor presentation"
             />
           </div>
@@ -47,10 +47,12 @@ const Styles = styled(motion.div)`
   @media only screen and (min-width: 1023px) {
     display: flex;
     justify-content: center;
+
     .content {
       max-width: 1200px;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     .heading,
     p {
@@ -60,6 +62,7 @@ const Styles = styled(motion.div)`
       max-height: 453.66px;
       margin-right: 60px;
       max-width: 700px;
+      margin-bottom: 0px;
     }
   }
 `;
