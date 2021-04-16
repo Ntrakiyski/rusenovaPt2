@@ -16,7 +16,7 @@ const StylesThreeYears = styled(motion.div)`
     .content {
       max-width: 1200px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
     }
     .heading,
     p {

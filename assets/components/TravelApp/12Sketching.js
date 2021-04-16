@@ -38,7 +38,7 @@ export const Sketching = () => {
       {!Width600 ? (
         <img src="/media/images/resized/Image 14.jpg" alt="auto-fill" />
       ) : (
-        <img src="/media/images/resized/Image14R.jpg" alt="auto-fill" />
+        <img src="/media/images/resized/Image14R.png" alt="auto-fill" />
       )}
     </StylesSketching>
   );

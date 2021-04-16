@@ -13,8 +13,8 @@ import { Nav } from "../assets/components/Main/Nav.js";
 import { NavRes } from "../assets/components/Main/NavRes.js";
 
 import { useMediaQuery } from "react-responsive";
+import { MediaQuerySSR } from "react-responsive-ssr";
 import { Hamburger } from "../assets/components/Main/Hamburger.js";
-import { Context as ResponsiveContext } from "react-responsive";
 
 function Index() {
   const Width1023 = useMediaQuery({
@@ -31,16 +31,16 @@ function Index() {
     <Styles>
       {loaded && (
         <>
-          <ResponsiveContext.Provider maxWidth={1023}>
+          <MediaQuerySSR maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </ResponsiveContext.Provider>
-          <ResponsiveContext.Provider minWidth={1024}>
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </ResponsiveContext.Provider>
+          </MediaQuerySSR>
         </>
       )}
       <div className="content">

@@ -16,12 +16,9 @@ import { MyRole } from "../assets/components/TelenorWork/MyRole";
 import { Heading } from "../assets/components/TelenorWork/Heading";
 
 import { useMediaQuery } from "react-responsive";
+import { MediaQuerySSR } from 'react-responsive-ssr';
 
 import { ContainerApp, Container } from "../assets/Animation.js";
-
-
-import { Context as ResponsiveContext } from "react-responsive";
-
 
 const Styles = styled(motion.div)`
   display: flex;
@@ -114,16 +111,16 @@ const TelenorPage = () => {
     >
       {loaded && (
         <>
-          <ResponsiveContext.Provider maxWidth={1023}>
+          <MediaQuerySSR maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </ResponsiveContext.Provider>
-          <ResponsiveContext.Provider minWidth={1024}>
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </ResponsiveContext.Provider>
+          </MediaQuerySSR>
         </>
       )}
       <div className="content">

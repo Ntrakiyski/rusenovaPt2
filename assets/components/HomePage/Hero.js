@@ -101,16 +101,15 @@ const Styles = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+  }
+  .imageDiv {
+    max-width: 375px;
 
-      .imageDiv {
-        max-width: 375px;
-
-        img {
-          max-width: 70%;
-          min-width: 200px;
-          width: 100%;
-        }
-      }
+    img {
+      
+      min-width: 200px;
+      width: 100%;
     }
     span {
       font-size: 32px;

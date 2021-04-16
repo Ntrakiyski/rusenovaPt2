@@ -29,7 +29,7 @@ import { Sketching } from "../assets/components/TravelApp/12Sketching";
 import { Styling } from "../assets/components/TravelApp/13Styles";
 import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
-import { Context as ResponsiveContext } from "react-responsive";
+import { MediaQuerySSR } from 'react-responsive-ssr';
 
 const TravelAppStyles = styled(motion.div)`
   margin-top: 60px;
@@ -78,16 +78,16 @@ const TravelPage = () => {
     >
       {loaded && (
         <>
-          <ResponsiveContext.Provider maxWidth={1023}>
+          <MediaQuerySSR maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </ResponsiveContext.Provider>
-          <ResponsiveContext.Provider minWidth={1024}>
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </ResponsiveContext.Provider>
+          </MediaQuerySSR>
         </>
       )}
       {!changeLoc ? (

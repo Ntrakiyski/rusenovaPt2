@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { Context as ResponsiveContext } from "react-responsive";
+import { MediaQuerySSR } from "react-responsive-ssr";
+import { useMediaQuery } from "react-responsive";
 
 import { Heading } from "../assets/components/AboutMe/Heading";
 import { SectionRight } from "../assets/components/AboutMe/SectionRight";
@@ -75,16 +76,16 @@ const AboutMe = () => {
     >
       {loaded && (
         <>
-          <ResponsiveContext.Provider value={{ width: 1023 }}>
+          <MediaQuerySSR maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </ResponsiveContext.Provider>
-          <ResponsiveContext.Provider minWidth={1024}>
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </ResponsiveContext.Provider>
+          </MediaQuerySSR>
         </>
       )}
       <div className="content">
