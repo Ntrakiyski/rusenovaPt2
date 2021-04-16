@@ -32,7 +32,7 @@ export const PlannerApp = () => {
               <a>
                 <div className="video">
                   <ReactPlayer
-                    url="/media/images/plannerVideo.mov"
+                    url="/media/videos/HomePage.mov"
                     playing={true}
                     loop={true}
                     muted={true}

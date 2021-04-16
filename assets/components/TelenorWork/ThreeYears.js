@@ -52,7 +52,6 @@ const Styles = styled(motion.div)`
       max-width: 1200px;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
     .heading,
     p {

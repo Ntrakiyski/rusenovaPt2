@@ -30,6 +30,15 @@ export const Hero = () => {
               className="image"
             >
               <img src="/media/images/profileImage.png" alt="imaged" />
+              <style>{`
+              .image {
+     
+      width: 100%;
+      img {
+        min-width: 200px;
+        width: 320px;
+      }
+    }`}</style>
             </motion.div>
           )}
           <motion.div
@@ -62,6 +71,19 @@ export const Hero = () => {
               </motion.span>
               Check out some of my work
             </div>
+            <style>{`
+            .heading {
+              display: flex;
+              flex-direction: column;
+                        }
+            h1 {
+              font-family: "Gilroy-Light";
+              font-weight: 400;
+            }
+            span {
+                font-weight: 700;
+              }
+            `}</style>
           </motion.div>
 
           {!Width1023 && (
@@ -78,6 +100,11 @@ export const Hero = () => {
               <img src="/media/images/profileImage.png" alt="imaged" />
             </motion.div>
           )}
+          <style>{`.row1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }`}</style>
         </div>
       </Styles>
     </AnimatePresence>
@@ -85,34 +112,6 @@ export const Hero = () => {
 };
 
 const Styles = styled("div")`
-  .heading {
-    display: flex;
-    flex-direction: column;
-    h1 {
-      font-family: "Gilroy-Light";
-      font-weight: 400;
-    }
-    span {
-      font-weight: 700;
-    }
-  }
-  .row1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .image {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      img {
-        min-width: 200px;
-        width: 320px;
-      }
-    }
-  }
   .down-arrow {
     margin-top: 40px;
     cursor: pointer;
