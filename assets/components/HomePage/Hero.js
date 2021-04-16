@@ -86,6 +86,8 @@ export const Hero = () => {
 
 const Styles = styled("div")`
   .heading {
+    display: flex;
+    flex-direction: column;
     h1 {
       font-family: "Gilroy-Light";
       font-weight: 400;
