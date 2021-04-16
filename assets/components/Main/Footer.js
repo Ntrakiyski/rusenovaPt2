@@ -26,6 +26,11 @@ const FooterStyles = styled(motion.div)`
       max-width: 100%;
     }
   }
+  img {
+    svg {
+      font-size: 42px;
+    }
+  }
 
   .links {
     display: flex;

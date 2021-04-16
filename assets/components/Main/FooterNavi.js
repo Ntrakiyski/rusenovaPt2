@@ -14,7 +14,7 @@ const StylesFooterNavi = styled(motion.div)`
     a {
       font-family: "Gilroy-Light";
       margin: 10px 0;
-      margin-left: 5px;
+
       font-size: 24px;
       text-transform: uppercase;
       cursor: pointer;
@@ -25,6 +25,7 @@ const StylesFooterNavi = styled(motion.div)`
     font-size: 32px;
     color: #727272 !important;
     width: 40px;
+    margin-right: 15px;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -39,7 +40,7 @@ const StylesFooterNavi = styled(motion.div)`
     .menu a,
     .menu div {
       font-size: 44px;
-      margin: 20px 0;
+      margin: 10px 0;
       margin-left: 15px;
     }
     .span {

@@ -71,7 +71,7 @@ const Styles = styled(motion.div)`
     }
     .res {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
     }
     p {
       width: 420px;

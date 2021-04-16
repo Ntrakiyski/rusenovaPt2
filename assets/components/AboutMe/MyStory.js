@@ -88,7 +88,7 @@ const Styles = styled(motion.div)`
     }
     .images {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       margin: 80px 0;
 

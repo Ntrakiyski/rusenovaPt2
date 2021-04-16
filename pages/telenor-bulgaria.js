@@ -21,6 +21,9 @@ import { ContainerApp, Container } from "../assets/Animation.js";
 
 import { MediaQuerySSR } from "react-responsive-ssr";
 
+import { Context as ResponsiveContext } from "react-responsive";
+
+
 const Styles = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -112,16 +115,16 @@ const TelenorPage = () => {
     >
       {loaded && (
         <>
-          <MediaQuerySSR maxWidth={1023}>
+          <ResponsiveContext.Provider maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
+          </ResponsiveContext.Provider>
+          <ResponsiveContext.Provider minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
+          </ResponsiveContext.Provider>
         </>
       )}
       <div className="content">

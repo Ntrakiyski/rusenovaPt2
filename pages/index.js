@@ -14,7 +14,7 @@ import { NavRes } from "../assets/components/Main/NavRes.js";
 
 import { useMediaQuery } from "react-responsive";
 import { Hamburger } from "../assets/components/Main/Hamburger.js";
-import { MediaQuerySSR } from "react-responsive-ssr";
+import { Context as ResponsiveContext } from "react-responsive";
 
 function Index() {
   const Width1023 = useMediaQuery({
@@ -29,14 +29,24 @@ function Index() {
   }, [loaded]);
   return (
     <Styles>
+      {loaded && (
+        <>
+          <ResponsiveContext.Provider maxWidth={1023}>
+            <NavRes
+              changeLoc={changeLoc}
+              setChangeLoc={setChangeLoc}
+              bgColor="#14171b"
+            />
+          </ResponsiveContext.Provider>
+          <ResponsiveContext.Provider minWidth={1024}>
+            <Nav bgColor="#14171b" />
+          </ResponsiveContext.Provider>
+        </>
+      )}
       <div className="content">
         {!changeLoc ? (
           <>
-            <Hero
-              loaded={loaded}
-              changeLoc={changeLoc}
-              setChangeLoc={setChangeLoc}
-            />
+            <Hero loaded={loaded} />
             <PlannerApp />
             <TelenorWork />
             <Toolbox />

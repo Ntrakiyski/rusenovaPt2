@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HamburgerStyles = styled(motion.div)`
+  margin-top: 60px;
   width: 100%;
   display: flex;
   flex-direction: column;

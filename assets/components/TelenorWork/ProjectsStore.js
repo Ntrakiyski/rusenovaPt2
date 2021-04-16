@@ -31,7 +31,7 @@ const StylesProjectStore = styled(motion.div)`
         width: auto;
       }
       :first-child {
-        margin-right: 30px;
+        margin-right: 4%;
       }
     }
 

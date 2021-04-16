@@ -14,12 +14,12 @@ const StylesStyling = styled(motion.div)`
       font-weight: 900;
     }
     #bold,
-    #typ {
+    .tapd {
       font-size: 18px;
       font-weight: 500;
       margin: 5px 0;
     }
-    #typ {
+    .tapd {
       margin-top: 0;
     }
     #largetitle {
@@ -54,6 +54,7 @@ const StylesStyling = styled(motion.div)`
 
   .row1 {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
   .heading-desktop {
@@ -143,7 +144,7 @@ export const Styling = () => {
                 </div>
               </div>
               <div className="typography">
-                <div id="typ">Typography</div>
+                <div className="tapd">Typography</div>
                 <div id="font">Montserrat</div>
                 <div id="bold">Bold, Medium, Regular</div>
                 <div>
@@ -161,7 +162,7 @@ export const Styling = () => {
             <h1>Style vision</h1>
             <div className="text ">
               <div className="typography">
-                <div id="typ">Typography</div>
+                <div className="tapd">Typography</div>
                 <div id="font">Montserrat</div>
                 <div id="bold">Bold, Medium, Regular</div>
                 <div>

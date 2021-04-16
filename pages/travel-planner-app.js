@@ -29,9 +29,10 @@ import { Sketching } from "../assets/components/TravelApp/12Sketching";
 import { Styling } from "../assets/components/TravelApp/13Styles";
 import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
-import { MediaQuerySSR } from "react-responsive-ssr";
+import { Context as ResponsiveContext } from "react-responsive";
 
 const TravelAppStyles = styled(motion.div)`
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +43,7 @@ const TravelAppStyles = styled(motion.div)`
   }
   .footer {
     margin-top: 40px;
+    width: 100vw;
   }
   p {
   }
@@ -76,16 +78,16 @@ const TravelPage = () => {
     >
       {loaded && (
         <>
-          <MediaQuerySSR maxWidth={1023}>
+          <ResponsiveContext.Provider maxWidth={1023}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
+          </ResponsiveContext.Provider>
+          <ResponsiveContext.Provider minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
+          </ResponsiveContext.Provider>
         </>
       )}
       {!changeLoc ? (

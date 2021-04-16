@@ -20,7 +20,7 @@ export const SectionRight = ({ imgSrc, title, paragraph, number }) => {
           </div>
         )}
         {Width1023 ? (
-          <div className="res">
+          <div className="response">
             <motion.div className="heading">
               {Width1023 && (
                 <div>
@@ -35,7 +35,7 @@ export const SectionRight = ({ imgSrc, title, paragraph, number }) => {
             </motion.div>
           </div>
         ) : (
-          <div className="res">
+          <div className="response">
             <div className="image">
               <img src={imgSrc} alt="talk on a table" />
             </div>
@@ -79,9 +79,9 @@ const Styles = styled(motion.div)`
       max-width: 574px;
       height: 100%;
     }
-    .res {
+    .response {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
     }
     p {
       width: 420px;

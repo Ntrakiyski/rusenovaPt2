@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { useMediaQuery } from "react-responsive";
+import { Context as ResponsiveContext } from "react-responsive";
 
 import { Heading } from "../assets/components/AboutMe/Heading";
 import { SectionRight } from "../assets/components/AboutMe/SectionRight";
@@ -18,8 +18,6 @@ import { Footer } from "../assets/components/Main/Footer";
 import { Hamburger } from "../assets/components/Main/Hamburger";
 
 import { ContainerApp, Container } from "../assets/Animation.js";
-
-import { MediaQuerySSR } from "react-responsive-ssr";
 
 const AboutMeStyles = styled(motion.div)`
   margin-top: 60px;
@@ -42,7 +40,7 @@ const AboutMeStyles = styled(motion.div)`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+
       .content {
         //set the width of the content
 
@@ -77,16 +75,16 @@ const AboutMe = () => {
     >
       {loaded && (
         <>
-          <MediaQuerySSR maxWidth={1023}>
+          <ResponsiveContext.Provider value={{ width: 1023 }}>
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
+          </ResponsiveContext.Provider>
+          <ResponsiveContext.Provider minWidth={1024}>
             <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
+          </ResponsiveContext.Provider>
         </>
       )}
       <div className="content">
