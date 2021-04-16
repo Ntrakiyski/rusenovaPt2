@@ -2,21 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const Solution = () => {
-  return (
-    <Styles className="setPadding">
-      <h1>Solution</h1>
-      <div className="subHead">Hypothesis</div>
-      <div className="bullets ">
-        <div id="first">• Comunity oriented place </div>
-        <div id="seccond">• Content based on personal lifestyle </div>
-        <div id="third">• Trip guides </div>
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesSolution = styled(motion.div)`
   .subHead {
     color: #818181;
     font-size: 18px;
@@ -43,3 +29,17 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Solution = () => {
+  return (
+    <StylesSolution className="setPadding">
+      <h1>Solution</h1>
+      <div className="subHead">Hypothesis</div>
+      <div className="bullets ">
+        <div id="first">• Comunity oriented place </div>
+        <div id="seccond">• Content based on personal lifestyle </div>
+        <div id="third">• Trip guides </div>
+      </div>
+    </StylesSolution>
+  );
+};

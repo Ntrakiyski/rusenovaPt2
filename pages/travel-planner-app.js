@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -29,71 +29,7 @@ import { Sketching } from "../assets/components/TravelApp/12Sketching";
 import { Styling } from "../assets/components/TravelApp/13Styles";
 import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
-const TravelPage = () => {
-  const [changeLoc, setChangeLoc] = useState(false);
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
-
-  return (
-    <TravelAppStyles
-      className="TravelAppRes"
-      variants={Width600 ? ContainerApp : Container}
-      initial="hidden"
-      animate="show"
-    >
-      {Width1023 ? (
-        <Nav bgColor="#14171b" />
-      ) : (
-        <NavRes
-          changeLoc={changeLoc}
-          setChangeLoc={setChangeLoc}
-          bgColor="#14171b"
-        />
-      )}
-      <div className="content">
-        {!changeLoc ? (
-          <>
-            <Hero />
-            <TheProcess />
-            <LookingBack />
-            <ProblemStatement />
-            <Solution />
-            <Survey />
-            <Interviews />
-            <Emphaty />
-            <Persona />
-            <UserJourney />
-            <Functionalities />
-            <Architecture />
-            <Sketching />
-            <Styling />
-            <SeccondPart />
-          </>
-        ) : (
-          <Hamburger />
-        )}
-        <div className="footer">
-          <FooterNavi
-            number="01"
-            menu="Telenor experience"
-            to="/telenor-bulgaria"
-          />
-          <FooterNavi number="02" menu="About" to="/about" />
-          <FooterNavi
-            number="03"
-            menu="Resume"
-            to="/media/GloriaPdf.pdf"
-            target={"_blank"}
-          />
-        </div>
-      </div>
-    </TravelAppStyles>
-  );
-};
+import { MediaQuerySSR } from "react-responsive-ssr";
 
 const TravelAppStyles = styled(motion.div)`
   display: flex;
@@ -115,5 +51,87 @@ const TravelAppStyles = styled(motion.div)`
     }
   }
 `;
+
+const TravelPage = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, [loaded]);
+  //
+  const [changeLoc, setChangeLoc] = useState(false);
+  const Width600 = useMediaQuery({
+    query: "(max-device-width: 600px)",
+  });
+  const Width1023 = useMediaQuery({
+    query: "(min-device-width: 1023px)",
+  });
+
+  return (
+    <TravelAppStyles
+      className="TravelAppRes"
+      variants={Width600 ? ContainerApp : Container}
+      initial="hidden"
+      animate="show"
+    >
+      {loaded && (
+        <>
+          <MediaQuerySSR maxWidth={1023}>
+            <NavRes
+              changeLoc={changeLoc}
+              setChangeLoc={setChangeLoc}
+              bgColor="#14171b"
+            />
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
+            <Nav bgColor="#14171b" />
+          </MediaQuerySSR>
+        </>
+      )}
+      {!changeLoc ? (
+        <>
+          <div className="content">
+            <Hero />
+            <TheProcess />
+            <LookingBack />
+            <ProblemStatement />
+            <Solution />
+            <Survey />
+            <Interviews />
+            <Emphaty />
+            <Persona />
+            <UserJourney />
+          </div>
+          <Functionalities />
+          <div className="content">
+            <Architecture />
+          </div>
+          <Sketching />
+          <div className="content">
+            <Styling />
+            <SeccondPart />
+          </div>
+        </>
+      ) : (
+        <Hamburger />
+      )}
+      <div className="footer">
+        <FooterNavi
+          number="01"
+          menu="Telenor experience"
+          to="/telenor-bulgaria"
+        />
+        <FooterNavi number="02" menu="About" to="/about" />
+        <FooterNavi
+          number="03"
+          menu="Resume"
+          to="/media/GloriaPdf.pdf"
+          target={"_blank"}
+        />
+      </div>
+      <Footer />
+    </TravelAppStyles>
+  );
+};
 
 export default TravelPage;

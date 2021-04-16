@@ -4,47 +4,26 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 
-export const FooterNavi = ({ number, menu, to, target }) => {
-  return (
-    <Styles className="setPadding">
-      <div className="content">
-        <Link href={to}>
-          <a target={target ? target : null}>
-            <div className="menu">
-              <div className="span">{number}.</div>
-              <motion.div
-                whileHover={{ x: 30, scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {menu}
-              </motion.div>
-            </div>
-          </a>
-        </Link>
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesFooterNavi = styled(motion.div)`
   padding-top: 0;
+  padding-bottom: 0;
 
   .menu {
     display: flex;
     align-items: center;
-    div {
+    a {
       font-family: "Gilroy-Light";
-      margin-bottom: 10px;
+      margin: 10px 0;
+      margin-left: 5px;
       font-size: 24px;
       text-transform: uppercase;
+      cursor: pointer;
     }
   }
 
   .span {
     font-size: 32px;
     color: #727272 !important;
-    margin-right: 5px;
-    margin-top: 1px;
     width: 40px;
   }
 
@@ -52,22 +31,47 @@ const Styles = styled(motion.div)`
     .span {
       margin-right: 25px;
     }
-    .menu div {
+    .menu a .menu div {
       font-size: 44px;
     }
   }
   @media only screen and (min-width: 1023px) {
+    .menu a,
     .menu div {
       font-size: 44px;
+      margin: 20px 0;
+      margin-left: 15px;
     }
     .span {
-      margin-right: 25px;
+      width: 60px;
     }
     display: flex;
     align-items: center;
     justify-content: center;
-    .content {
+    .contentT {
       width: 1200px;
     }
   }
 `;
+
+export const FooterNavi = ({ number, menu, to, target }) => {
+  return (
+    <StylesFooterNavi className="setPadding">
+      <div className="contentT">
+        <Link href={to}>
+          <div className="menu">
+            <div className="span">{number}.</div>
+            <a target={target ? target : null}>
+              <motion.div
+                whileHover={{ x: 30, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {menu}
+              </motion.div>
+            </a>
+          </div>
+        </Link>
+      </div>
+    </StylesFooterNavi>
+  );
+};

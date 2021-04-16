@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import styled from "styled-components";
 
 import { Hero } from "../assets/components/HomePage/Hero.js";
 import { PlannerApp } from "../assets/components/HomePage/PlannerApp.js";
@@ -12,6 +14,7 @@ import { NavRes } from "../assets/components/Main/NavRes.js";
 
 import { useMediaQuery } from "react-responsive";
 import { Hamburger } from "../assets/components/Main/Hamburger.js";
+import { MediaQuerySSR } from "react-responsive-ssr";
 
 function Index() {
   const Width1023 = useMediaQuery({
@@ -19,29 +22,41 @@ function Index() {
   });
 
   const [changeLoc, setChangeLoc] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, [loaded]);
   return (
-    <div>
-      {!changeLoc ? (
-        <>
-          <Nav bgColor="#14171b" />
-          <Hero />
-          <PlannerApp />
-          <TelenorWork />
-          <Toolbox />
-          <FooterNavi number="01" menu="About" to="/about" />
-          <FooterNavi
-            number="02"
-            menu="Resume"
-            to="/media/GloriaPdf.pdf"
-            target={"_blank"}
-          />
-        </>
-      ) : (
-        <Hamburger />
-      )}
-      <Footer />
-    </div>
+    <Styles>
+      <div className="content">
+        {!changeLoc ? (
+          <>
+            <Hero
+              loaded={loaded}
+              changeLoc={changeLoc}
+              setChangeLoc={setChangeLoc}
+            />
+            <PlannerApp />
+            <TelenorWork />
+            <Toolbox />
+            <FooterNavi number="01" menu="About" to="/about" />
+            <FooterNavi
+              number="02"
+              menu="Resume"
+              to="/media/GloriaPdf.pdf"
+              target={"_blank"}
+            />
+          </>
+        ) : (
+          <Hamburger />
+        )}
+        <Footer />
+      </div>
+    </Styles>
   );
 }
+
+const Styles = styled.div``;
 
 export default Index;

@@ -2,35 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const ProblemStatement = () => {
-  return (
-    <Styles className="setPadding">
-      <div className="problem">
-        <div className="text">
-          <h1>Problem statement</h1>
-          <p>
-            • People experience difficulty finding the right place which
-            corresponds to their lifestyle and <span>personal milestones</span>
-          </p>
-          <p>
-            • Insufficient time to manage their trip - activities, budget, and
-            friends
-          </p>
-        </div>
-        <img src="/media/images/resized/Image 4.png" alt="auto-fill" />
-      </div>
-      <div className="hmw">
-        <h1>HMW</h1>
-        <p>
-          Create an app that shows content based on the personality of the user
-          and helps to manage trips
-        </p>
-      </div>
-    </Styles>
-  );
-};
 
-const Styles = styled(motion.div)`
+
+const StylesProblem = styled(motion.div)`
   .problem {
     display: flex;
     flex-direction: column;
@@ -86,3 +60,32 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+
+export const ProblemStatement = () => {
+  return (
+    <StylesProblem className="setPadding">
+      <div className="problem">
+        <div className="text">
+          <h1>Problem statement</h1>
+          <p>
+            • People experience difficulty finding the right place which
+            corresponds to their lifestyle and <span>personal milestones</span>
+          </p>
+          <p>
+            • Insufficient time to manage their trip - activities, budget, and
+            friends
+          </p>
+        </div>
+        <img src="/media/images/resized/Image 4.png" alt="auto-fill" />
+      </div>
+      <div className="hmw">
+        <h1>HMW</h1>
+        <p>
+          Create an app that shows content based on the personality of the user
+          and helps to manage trips
+        </p>
+      </div>
+    </StylesProblem>
+  );
+};

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -19,55 +19,7 @@ import { useMediaQuery } from "react-responsive";
 
 import { ContainerApp, Container } from "../assets/Animation.js";
 
-const TelenorPage = () => {
-  const [changeLoc, setChangeLoc] = useState(false);
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
-  const Width600 = useMediaQuery({
-    query: "(min-device-width: 600px)",
-  });
-  return (
-    <Styles
-      variants={Width600 ? ContainerApp : Container}
-      initial="hidden"
-      animate="show"
-    >
-      {Width1023 ? (
-        <Nav bgColor="#14171b" />
-      ) : (
-        <NavRes
-          changeLoc={changeLoc}
-          setChangeLoc={setChangeLoc}
-          bgColor="#14171b"
-        />
-      )}
-      <div className="content">
-        {!changeLoc ? (
-          <>
-            <Heading />
-            <ThreeYears />
-            <MyRole />
-            <Projects />
-            <div className="foot">
-              <FooterNavi number="01" menu="About" to="/about" />
-              <FooterNavi number="02" menu="Projects" to="/" />
-              <FooterNavi
-                number="03"
-                menu="Resume"
-                to="/media/GloriaPdf.pdf"
-                target={"_blank"}
-              />
-            </div>
-          </>
-        ) : (
-          <Hamburger />
-        )}
-        <Footer />
-      </div>
-    </Styles>
-  );
-};
+import { MediaQuerySSR } from "react-responsive-ssr";
 
 const Styles = styled(motion.div)`
   display: flex;
@@ -75,10 +27,6 @@ const Styles = styled(motion.div)`
   flex-direction: column;
   align-items: center;
 
-  .content {
-    max-width: 1300px;
-    margin-top: 40px;
-  }
   //Main title - My experience...
   h5 {
     margin: 0 0 40px 0;
@@ -120,6 +68,11 @@ const Styles = styled(motion.div)`
   }
   @media only screen and (min-width: 1023px) {
     //Main title - My experience...
+
+    .content {
+      max-width: 1400px;
+      margin-top: 40px;
+    }
     h5 {
       margin-bottom: 70px;
     }
@@ -136,5 +89,66 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+const TelenorPage = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, [loaded]);
+  //
+  const [changeLoc, setChangeLoc] = useState(false);
+  const Width1023 = useMediaQuery({
+    query: "(min-device-width: 1023px)",
+  });
+  const Width600 = useMediaQuery({
+    query: "(min-device-width: 600px)",
+  });
+  return (
+    <Styles
+      variants={Width600 ? ContainerApp : Container}
+      initial="hidden"
+      animate="show"
+    >
+      {loaded && (
+        <>
+          <MediaQuerySSR maxWidth={1023}>
+            <NavRes
+              changeLoc={changeLoc}
+              setChangeLoc={setChangeLoc}
+              bgColor="#14171b"
+            />
+          </MediaQuerySSR>
+          <MediaQuerySSR minWidth={1024}>
+            <Nav bgColor="#14171b" />
+          </MediaQuerySSR>
+        </>
+      )}
+      <div className="content">
+        {!changeLoc ? (
+          <>
+            <Heading />
+            <ThreeYears />
+            <MyRole />
+            <Projects />
+            <div className="foot">
+              <FooterNavi number="01" menu="About" to="/about" />
+              <FooterNavi number="02" menu="Projects" to="/" />
+              <FooterNavi
+                number="03"
+                menu="Resume"
+                to="/media/GloriaPdf.pdf"
+                target={"_blank"}
+              />
+            </div>
+          </>
+        ) : (
+          <Hamburger />
+        )}
+        <Footer />
+      </div>
+    </Styles>
+  );
+};
 
 export default TelenorPage;

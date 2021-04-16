@@ -4,77 +4,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const Styling = () => {
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 700px)",
-  });
-  return (
-    <Styles className="setPadding">
-      <div className="text1">
-        {!Width600 ? (
-          <>
-            <div className="row1 ">
-              <div className="heading-desktop">
-                <h1>Style vision</h1>
-                <div className="text ">
-                  <p id="bold">Colors</p>
-                  <div className="bg-rect bg1">
-                    <div className="rect1"></div>
-                    <div className="rect2"></div>
-                    <div className="rect3"></div>
-                    <div className="rect4"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="typography">
-                <div id="typ">Typography</div>
-                <div id="font">Montserrat</div>
-                <div id="bold">Bold, Medium, Regular</div>
-                <div>
-                  <div id="largetitle">Large title</div>
-                  <div id="title">Title</div>
-                  <div id="subt">Subtitle</div>
-                  <div id="body">Body</div>
-                  <div id="capt">Captions</div>
-                </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          <div>
-            <h1>Style vision</h1>
-            <div className="text ">
-              <div className="typography">
-                <div id="typ">Typography</div>
-                <div id="font">Montserrat</div>
-                <div id="bold">Bold, Medium, Regular</div>
-                <div>
-                  <div id="largetitle">Large title</div>
-                  <div id="title">Title</div>
-                  <div id="subt">Subtitle</div>
-                  <div id="body">Body</div>
-                  <div id="capt">Captions</div>
-                </div>
-              </div>
-
-              <div>
-                <p id="bold">Colors</p>
-                <div className="bg-rect ">
-                  <div className="rect1"></div>
-                  <div className="rect2"></div>
-                  <div className="rect3"></div>
-                  <div className="rect4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesStyling = styled(motion.div)`
   .typography {
     h1 {
       font-size: 27.65px;
@@ -189,3 +119,73 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Styling = () => {
+  const Width600 = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  return (
+    <StylesStyling className="setPadding">
+      <div className="text1">
+        {!Width600 ? (
+          <>
+            <div className="row1 ">
+              <div className="heading-desktop">
+                <h1>Style vision</h1>
+                <div className="text ">
+                  <p id="bold">Colors</p>
+                  <div className="bg-rect bg1">
+                    <div className="rect1"></div>
+                    <div className="rect2"></div>
+                    <div className="rect3"></div>
+                    <div className="rect4"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="typography">
+                <div id="typ">Typography</div>
+                <div id="font">Montserrat</div>
+                <div id="bold">Bold, Medium, Regular</div>
+                <div>
+                  <div id="largetitle">Large title</div>
+                  <div id="title">Title</div>
+                  <div id="subt">Subtitle</div>
+                  <div id="body">Body</div>
+                  <div id="capt">Captions</div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div>
+            <h1>Style vision</h1>
+            <div className="text ">
+              <div className="typography">
+                <div id="typ">Typography</div>
+                <div id="font">Montserrat</div>
+                <div id="bold">Bold, Medium, Regular</div>
+                <div>
+                  <div id="largetitle">Large title</div>
+                  <div id="title">Title</div>
+                  <div id="subt">Subtitle</div>
+                  <div id="body">Body</div>
+                  <div id="capt">Captions</div>
+                </div>
+              </div>
+
+              <div>
+                <p id="bold">Colors</p>
+                <div className="bg-rect ">
+                  <div className="rect1"></div>
+                  <div className="rect2"></div>
+                  <div className="rect3"></div>
+                  <div className="rect4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </StylesStyling>
+  );
+};

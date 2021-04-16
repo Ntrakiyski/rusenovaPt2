@@ -4,41 +4,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const Architecture = () => {
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-  return (
-    <Styles className="setPadding">
-      <h1>Informational Architecture</h1>
-      {!Width600 ? (
-        <img src="/media/images/resized/Image 13.png" alt="13th" />
-      ) : (
-        <div className="arch">
-          <div>
-            <img
-              className="column"
-              src="/media/images/resized/Arch1.png"
-              alt="1"
-            />
-            <img src="/media/images/resized/Arch2.png" alt="2" />
-          </div>
-
-          <div>
-            <img
-              className="column"
-              src="/media/images/resized/Arch3.png"
-              alt="3"
-            />
-            <img src="/media/images/resized/Arch4.png" alt="4" />
-          </div>
-        </div>
-      )}
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesArchitecture = styled(motion.div)`
   img {
     width: 100%;
     margin: 40px 0;
@@ -78,3 +44,37 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Architecture = () => {
+  const Width600 = useMediaQuery({
+    query: "(max-device-width: 600px)",
+  });
+  return (
+    <StylesArchitecture className="setPadding">
+      <h1>Informational Architecture</h1>
+      {!Width600 ? (
+        <img src="/media/images/resized/Image 13.png" alt="13th" />
+      ) : (
+        <div className="arch">
+          <div>
+            <img
+              className="column"
+              src="/media/images/resized/Arch1.png"
+              alt="1"
+            />
+            <img src="/media/images/resized/Arch2.png" alt="2" />
+          </div>
+
+          <div>
+            <img
+              className="column"
+              src="/media/images/resized/Arch3.png"
+              alt="3"
+            />
+            <img src="/media/images/resized/Arch4.png" alt="4" />
+          </div>
+        </div>
+      )}
+    </StylesArchitecture>
+  );
+};

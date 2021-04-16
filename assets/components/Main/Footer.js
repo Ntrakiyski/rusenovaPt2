@@ -2,6 +2,50 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+const FooterStyles = styled(motion.div)`
+  padding-top: 60px;
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      font-size: 28px;
+      font-family: "Space Grotesk";
+      font-weight: 900;
+    }
+
+    span {
+      border-bottom: 2px solid #dc2020;
+    }
+
+    p {
+      margin: 20px 0px 50px 0;
+      font-size: 15px;
+      max-width: 100%;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px;
+  }
+
+  .line {
+    height: 32px;
+    width: 2px;
+    background: #dddddd;
+    margin: 0 20px;
+  }
+
+  .font {
+    display: none;
+  }
+`;
+
 export const Footer = ({ flexDirection, alignItems, marginLeft }) => {
   return (
     <FooterStyles className="setPadding">
@@ -60,46 +104,3 @@ export const Footer = ({ flexDirection, alignItems, marginLeft }) => {
     </FooterStyles>
   );
 };
-const FooterStyles = styled(motion.div)`
-  padding-top: 60px;
-  .heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    h1 {
-      font-size: 28px;
-      font-family: "Space Grotesk";
-      font-weight: 900;
-    }
-
-    span {
-      border-bottom: 2px solid #dc2020;
-    }
-
-    p {
-      margin: 20px 0px 50px 0;
-      font-size: 15px;
-      max-width: 100%;
-    }
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 57px;
-  }
-
-  .line {
-    height: 32px;
-    width: 2px;
-    background: #dddddd;
-    margin: 0 20px;
-  }
-
-  .font {
-    display: none;
-  }
-`;

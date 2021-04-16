@@ -3,11 +3,15 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 
+import { NavRes } from "../Main/NavRes";
+import { Nav } from "../Main/Nav";
+import { MediaQuerySSR } from "react-responsive-ssr";
+
 //import image
 
 import { useMediaQuery } from "react-responsive";
 
-export const Hero = () => {
+export const Hero = ({ loaded, changeLoc, setChangeLoc }) => {
   const Width1023 = useMediaQuery({
     query: "(min-device-width: 1023px)",
   });
@@ -17,6 +21,20 @@ export const Hero = () => {
   return (
     <AnimatePresence>
       <Styles className="setPadding">
+        {loaded && (
+          <>
+            <MediaQuerySSR maxWidth={1023}>
+              <NavRes
+                changeLoc={changeLoc}
+                setChangeLoc={setChangeLoc}
+                bgColor="#14171b"
+              />
+            </MediaQuerySSR>
+            <MediaQuerySSR minWidth={1024}>
+              <Nav bgColor="#14171b" />
+            </MediaQuerySSR>
+          </>
+        )}
         <div className="row1">
           {Width1023 && (
             <motion.div
@@ -112,6 +130,7 @@ export const Hero = () => {
 };
 
 const Styles = styled("div")`
+  margin-top: 60px;
   .down-arrow {
     margin-top: 40px;
     cursor: pointer;
@@ -126,10 +145,11 @@ const Styles = styled("div")`
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 80px;
   }
   @media only screen and (min-width: 1023px) {
-    margin-top: 30px;
-    min-height: calc(100vh - 218px);
+    margin-top: 80px;
+    min-height: calc(100vh - 200px);
     display: flex;
     justify-content: center;
     align-items: center;

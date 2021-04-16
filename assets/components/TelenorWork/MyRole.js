@@ -5,6 +5,31 @@ import { motion } from "framer-motion";
 
 import { ParaComp } from "./ParaComp";
 
+const StylesMyRole = styled(motion.div)`
+  .title {
+    margin-top: 30px;
+  }
+  .paragraphs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 40px;
+  }
+  @media only screen and (min-width: 1023px) {
+    .title {
+      h5 {
+        margin-bottom: 0;
+        margin-top: 100px;
+      }
+    }
+    .paragraphs {
+      gap: 40px;
+      p {
+        width: 100%;
+      }
+    }
+  }
+`;
+
 export const MyRole = () => {
   const para1 = (
     <p>
@@ -41,7 +66,7 @@ export const MyRole = () => {
     </p>
   );
   return (
-    <Styles className="setPadding">
+    <StylesMyRole className="setPadding">
       <h5>MY ROLE IN THE PROJECTS</h5>
       <div className="paragraphs">
         <ParaComp title="Emphatize" content={para1} />
@@ -51,30 +76,6 @@ export const MyRole = () => {
         <ParaComp title="Test" content={para5} />
         <ParaComp title="Design" content={para6} />
       </div>
-    </Styles>
+    </StylesMyRole>
   );
 };
-const Styles = styled(motion.div)`
-  .title {
-    margin-top: 30px;
-  }
-  .paragraphs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 40px;
-  }
-  @media only screen and (min-width: 1023px) {
-    .title {
-      h5 {
-        margin-bottom: 0;
-        margin-top: 100px;
-      }
-    }
-    .paragraphs {
-      gap: 40px;
-      p {
-        width: 100%;
-      }
-    }
-  }
-`;

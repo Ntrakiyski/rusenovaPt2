@@ -6,6 +6,23 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 
+const HamburgerStyles = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .menues {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    div {
+      margin-bottom: 30px;
+    }
+  }
+`;
+
 export const Hamburger = () => {
   const location = useRouter();
 
@@ -53,20 +70,3 @@ export const Hamburger = () => {
     </HamburgerStyles>
   );
 };
-
-const HamburgerStyles = styled(motion.div)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  .menues {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 10px;
-    margin-top: 50px;
-    div {
-      margin-bottom: 30px;
-    }
-  }
-`;

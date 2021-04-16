@@ -50,12 +50,7 @@ const Styles = styled(motion.div)`
   .content {
     display: flex;
     flex-direction: column;
-  }
-
-  .heading {
-    display: flex;
-    align-items: center;
-  }
+ }
 
   //Logos
   .logos {

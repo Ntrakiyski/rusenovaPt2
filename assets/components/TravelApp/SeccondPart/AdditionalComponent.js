@@ -6,100 +6,10 @@ import { motion } from "framer-motion";
 import { Video } from "../Video";
 
 
-export const AdditionalComponent = ({
-  multImg1,
-  multImg2,
-  multImg3,
-  multImg4,
-  boxText1,
-  boxText2,
-  mainImg1,
-  mainImg2,
-  videoSrc,
-  lastImg,
-  boxTextLast,
-}) => {
-  return (
-    <Styles>
-      {mainImg1 && (
-        <div className="images">
-          {mainImg1 && <img className="image1" src={mainImg1} alt="here is" />}
-          {mainImg2 && <img className="image2 " src={mainImg2} alt="here is" />}
-        </div>
-      )}
-      {videoSrc && (
-        <div className="video">
-          <Video src={videoSrc} />
-        </div>
-      )}
-      {boxText1 && (
-        <div className="container">
-          <div className="box1">
-            <img src="/media/images/idea.png" alt="light bulb" />
-            <p>{boxText1}</p>
-          </div>
-          {boxText2 && (
-            <div className="box2">
-              <img src="/media/images/idea.png" alt="light bulb" />
-              <p>{boxText2}</p>
-            </div>
-          )}
-        </div>
-      )}
-      <div>
-        {multImg1 && (
-          <div className="flex">
-            <div
-              className={
-                !multImg4 ? "multipleImages" : "gridDisplay setPadding"
-              }
-            >
-              <div className="name">
-                <div>Daily plan</div>
-                <img src={multImg1} alt="croped" />
-              </div>
-              <div className="name">
-                <div>Budget</div>
-                <img src={multImg2} alt="croped" />
-              </div>
-
-              <div className="name">
-                <div>Packing</div>
-                <img src={multImg3} alt="croped" />
-              </div>
-              <div className="name">
-                <div>Docs</div>
-                <img src={multImg4} alt="croped" />
-              </div>
-            </div>
-          </div>
-        )}
-        <div className="row11">
-          {lastImg && (
-            <div className="images">
-              {lastImg && (
-                <img className="image1" src={lastImg} alt="here is" />
-              )}
-            </div>
-          )}
-          {boxTextLast && (
-            <div className="container">
-              <div className="box1">
-                <img src="/media/images/idea.png" alt="light bulb" />
-                <p>{boxTextLast}</p>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesAddComp = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   .gridDisplay {
@@ -182,3 +92,94 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+
+export const AdditionalComponent = ({
+  multImg1,
+  multImg2,
+  multImg3,
+  multImg4,
+  boxText1,
+  boxText2,
+  mainImg1,
+  mainImg2,
+  videoSrc,
+  lastImg,
+  boxTextLast,
+}) => {
+  return (
+    <StylesAddComp>
+      {mainImg1 && (
+        <div className="images">
+          {mainImg1 && <img className="image1" src={mainImg1} alt="here is" />}
+          {mainImg2 && <img className="image2 " src={mainImg2} alt="here is" />}
+        </div>
+      )}
+      {videoSrc && (
+        <div className="video">
+          <Video src={videoSrc} />
+        </div>
+      )}
+      {boxText1 && (
+        <div className="container">
+          <div className="box1">
+            <img src="/media/images/idea.png" alt="light bulb" />
+            <p>{boxText1}</p>
+          </div>
+          {boxText2 && (
+            <div className="box2">
+              <img src="/media/images/idea.png" alt="light bulb" />
+              <p>{boxText2}</p>
+            </div>
+          )}
+        </div>
+      )}
+      <div>
+        {multImg1 && (
+          <div className="flex">
+            <div
+              className={
+                !multImg4 ? "multipleImages" : "gridDisplay setPadding"
+              }
+            >
+              <div className="name">
+                <div>Daily plan</div>
+                <img src={multImg1} alt="croped" />
+              </div>
+              <div className="name">
+                <div>Budget</div>
+                <img src={multImg2} alt="croped" />
+              </div>
+
+              <div className="name">
+                <div>Packing</div>
+                <img src={multImg3} alt="croped" />
+              </div>
+              <div className="name">
+                <div>Docs</div>
+                <img src={multImg4} alt="croped" />
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="row11">
+          {lastImg && (
+            <div className="images">
+              {lastImg && (
+                <img className="image1" src={lastImg} alt="here is" />
+              )}
+            </div>
+          )}
+          {boxTextLast && (
+            <div className="container">
+              <div className="box1">
+                <img src="/media/images/idea.png" alt="light bulb" />
+                <p>{boxTextLast}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </StylesAddComp>
+  );
+};

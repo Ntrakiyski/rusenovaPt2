@@ -1,26 +1,7 @@
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 
-export const Video = ({ src, classStyles }) => {
-  return (
-    <Styles>
-      <div className="video">
-        <ReactPlayer
-          url={src}
-          playing={true}
-          loop={true}
-          muted={true}
-          width="100%"
-          height="100%"
-          playsinline={true}
-          className={classStyles}
-        />
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled.div`
+const StylesVideo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,3 +36,22 @@ const Styles = styled.div`
     }
   }
 `;
+
+export const Video = ({ src, classStyles }) => {
+  return (
+    <StylesVideo>
+      <div className="video">
+        <ReactPlayer
+          url={src}
+          playing={true}
+          loop={true}
+          muted={true}
+          width="100%"
+          height="100%"
+          playsinline={true}
+          className={classStyles}
+        />
+      </div>
+    </StylesVideo>
+  );
+};

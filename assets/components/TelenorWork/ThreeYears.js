@@ -5,12 +5,38 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
+const StylesThreeYears = styled(motion.div)`
+  .image {
+    margin: 0px 0 60px 0;
+  }
+  @media only screen and (min-width: 1023px) {
+    display: flex;
+    justify-content: center;
+
+    .content {
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+    }
+    .heading,
+    p {
+      max-width: 440px;
+    }
+    .image {
+      max-height: 453.66px;
+      margin-right: 60px;
+      max-width: 700px;
+      margin-bottom: 0px;
+    }
+  }
+`;
+
 export const ThreeYears = () => {
   const Width1023 = useMediaQuery({
     query: "(min-device-width: 1023px)",
   });
   return (
-    <Styles className="setPadding">
+    <StylesThreeYears className="setPadding">
       <div className="content">
         {Width1023 && (
           <div className="image">
@@ -37,31 +63,6 @@ export const ThreeYears = () => {
           </p>
         </div>
       </div>
-    </Styles>
+    </StylesThreeYears>
   );
 };
-const Styles = styled(motion.div)`
-  .image {
-    margin: 0px 0 60px 0;
-  }
-  @media only screen and (min-width: 1023px) {
-    display: flex;
-    justify-content: center;
-
-    .content {
-      max-width: 1200px;
-      display: flex;
-      justify-content: center;
-    }
-    .heading,
-    p {
-      max-width: 480px;
-    }
-    .image {
-      max-height: 453.66px;
-      margin-right: 60px;
-      max-width: 700px;
-      margin-bottom: 0px;
-    }
-  }
-`;

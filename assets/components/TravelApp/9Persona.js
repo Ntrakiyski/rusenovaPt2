@@ -4,27 +4,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const Persona = () => {
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-  return (
-    <Styles className="setPadding">
-      <h1>Persona</h1>
-      <p>
-        Using the insights from the Empathy map, I created a more detailed
-        segment to have a clear presentation of the target user
-      </p>
-      {!Width600 ? (
-        <img src="/media/images/resized/Image 11.png" alt="auto-fill" />
-      ) : (
-        <img src="/media/images/resized/Image 11R.png" alt="auto-fill" />
-      )}
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesPersona = styled(motion.div)`
   img {
     width: 100%;
   }
@@ -45,3 +25,23 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Persona = () => {
+  const Width600 = useMediaQuery({
+    query: "(max-device-width: 600px)",
+  });
+  return (
+    <StylesPersona className="setPadding">
+      <h1>Persona</h1>
+      <p>
+        Using the insights from the Empathy map, I created a more detailed
+        segment to have a clear presentation of the target user
+      </p>
+      {!Width600 ? (
+        <img src="/media/images/resized/Image 11.png" alt="auto-fill" />
+      ) : (
+        <img src="/media/images/resized/Image 11R.png" alt="auto-fill" />
+      )}
+    </StylesPersona>
+  );
+};

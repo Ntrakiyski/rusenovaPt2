@@ -4,53 +4,7 @@ import { motion } from "framer-motion";
 
 import { InterviewBox } from "./InterviewBox";
 
-export const Interviews = () => {
-  return (
-    <Styles className="setPadding">
-      <div className="row1">
-        <div className="text">
-          <div className="header">
-            <div>
-              <h1>Interviews</h1>
-              <div className="subHead">Qualitative research</div>
-            </div>
-            <img
-              src="/media/images/resized/Image 7.png"
-              className="eleven"
-              alt="auto-fill"
-            />
-          </div>
-          <p>
-            I interviewed 11 people both in-person and remotely and I ask them
-            questions like:
-          </p>
-        </div>
-      </div>
-      <div className="questions">
-        <div className="column">
-          <p className="title">What activities currently waste your time?</p>
-          <InterviewBox text="Calculating my budget" />
-          <InterviewBox text="Organizing my friends" />
-          <InterviewBox text="Finding activities" />
-        </div>
-        <div className="column ">
-          <p className="title change">
-            How the process of managing trip destination makes you feel and why?
-          </p>
-          <InterviewBox text="I want to be spontaneous but I want to see everything the place can offer" />
-          <InterviewBox text="Last time I felt like I couldn’t explore everything worth seeing" />
-        </div>
-        <div className="column">
-          <p className="title">How do you choose a travel destination?</p>
-          <InterviewBox text="When my friends are sharing their experience" />
-          <InterviewBox text="I usually see a cool place while I’m scrolling through my feed, and I wish I could go there" />
-        </div>
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesInterviews = styled(motion.div)`
   .header {
     display: flex;
     justify-content: space-between;
@@ -127,3 +81,49 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Interviews = () => {
+  return (
+    <StylesInterviews className="setPadding">
+      <div className="row1">
+        <div className="text">
+          <div className="header">
+            <div>
+              <h1>Interviews</h1>
+              <div className="subHead">Qualitative research</div>
+            </div>
+            <img
+              src="/media/images/resized/Image 7.png"
+              className="eleven"
+              alt="auto-fill"
+            />
+          </div>
+          <p>
+            I interviewed 11 people both in-person and remotely and I ask them
+            questions like:
+          </p>
+        </div>
+      </div>
+      <div className="questions">
+        <div className="column">
+          <p className="title">What activities currently waste your time?</p>
+          <InterviewBox text="Calculating my budget" />
+          <InterviewBox text="Organizing my friends" />
+          <InterviewBox text="Finding activities" />
+        </div>
+        <div className="column ">
+          <p className="title change">
+            How the process of managing trip destination makes you feel and why?
+          </p>
+          <InterviewBox text="I want to be spontaneous but I want to see everything the place can offer" />
+          <InterviewBox text="Last time I felt like I couldn’t explore everything worth seeing" />
+        </div>
+        <div className="column">
+          <p className="title">How do you choose a travel destination?</p>
+          <InterviewBox text="When my friends are sharing their experience" />
+          <InterviewBox text="I usually see a cool place while I’m scrolling through my feed, and I wish I could go there" />
+        </div>
+      </div>
+    </StylesInterviews>
+  );
+};

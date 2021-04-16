@@ -5,82 +5,7 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 
-export const ProjectsStore = ({
-  number,
-  title,
-  sub,
-  image1,
-  image2,
-  image3,
-  stores,
-  titleImg,
-}) => {
-  return (
-    <Styles>
-      <div className="content">
-        <div className="res">
-          <div className="numberSpan"> - {number} -</div>
-          <h3>{title}</h3>
-          {sub && <p className="sub">{sub}</p>}
-          {stores && (
-            <div className="stores">
-              <Link
-                href={
-                  " https://apps.apple.com/bg/app/mytelenor-bulgaria/id1186781645"
-                }
-                target="_blank"
-              >
-                <a>
-                  <motion.img
-                    whileHover={{ y: 15, scale: 1.1 }}
-                    src="/media/images/apple.png"
-                    width="141px"
-                    height="40px"
-                    alt="apple logo"
-                  />
-                </a>
-              </Link>
-
-              <Link
-                href={
-                  "https://play.google.com/store/apps/details?id=bg.telenor.mytelenor"
-                }
-                target="_blank"
-              >
-                <a>
-                  <motion.img
-                    whileHover={{ y: 15, scale: 1.1 }}
-                    src="/media/images/android.png"
-                    alt="android logo"
-                    width="141px"
-                  />
-                </a>
-              </Link>
-            </div>
-          )}
-        </div>
-
-        <div className="images">
-          {image1 && (
-            <div className="imag1">
-              {titleImg && <div>Before</div>}
-              <img className="phone" src={image1} alt="before" />
-            </div>
-          )}
-          {image2 && (
-            <div className="imag1">
-              {titleImg && <div>After</div>}
-              <img className="phone" src={image2} alt="after" />
-            </div>
-          )}
-          {image3 && <img className="vignetteImage" src={image3} alt="new" />}
-        </div>
-      </div>
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesProjectStore = styled(motion.div)`
   padding: 0 0 40px 0;
   .stores {
     img {
@@ -158,3 +83,78 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const ProjectsStore = ({
+  number,
+  title,
+  sub,
+  image1,
+  image2,
+  image3,
+  stores,
+  titleImg,
+}) => {
+  return (
+    <StylesProjectStore>
+      <div className="content">
+        <div className="res">
+          <div className="numberSpan"> - {number} -</div>
+          <h3>{title}</h3>
+          {sub && <p className="sub">{sub}</p>}
+          {stores && (
+            <div className="stores">
+              <Link
+                href={
+                  " https://apps.apple.com/bg/app/mytelenor-bulgaria/id1186781645"
+                }
+                target="_blank"
+              >
+                <a>
+                  <motion.img
+                    whileHover={{ y: 15, scale: 1.1 }}
+                    src="/media/images/apple.png"
+                    width="141px"
+                    height="40px"
+                    alt="apple logo"
+                  />
+                </a>
+              </Link>
+
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=bg.telenor.mytelenor"
+                }
+                target="_blank"
+              >
+                <a>
+                  <motion.img
+                    whileHover={{ y: 15, scale: 1.1 }}
+                    src="/media/images/android.png"
+                    alt="android logo"
+                    width="141px"
+                  />
+                </a>
+              </Link>
+            </div>
+          )}
+        </div>
+
+        <div className="images">
+          {image1 && (
+            <div className="imag1">
+              {titleImg && <div>Before</div>}
+              <img className="phone" src={image1} alt="before" />
+            </div>
+          )}
+          {image2 && (
+            <div className="imag1">
+              {titleImg && <div>After</div>}
+              <img className="phone" src={image2} alt="after" />
+            </div>
+          )}
+          {image3 && <img className="vignetteImage" src={image3} alt="new" />}
+        </div>
+      </div>
+    </StylesProjectStore>
+  );
+};

@@ -3,27 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-
-export const Heading = () => {
-  return (
-    <Styles
-  
-      className="setPadding"
-    >
-      <div className="content">
-        <h5>ABOUT</h5>
-        <motion.div className="text">
-          I am a Product Designer with over <span>three</span> years of
-          experience in the telecommunications industry designing{" "}
-          <span>cross-platform</span> products, including SaaS. My goal is to
-          help businesses in creating products that <span>empower</span> people.
-        </motion.div>
-        <h5 className="values">VALUES</h5>
-      </div>
-    </Styles>
-  );
-};
-
 const Styles = styled(motion.div)`
   .values {
     margin-top: 80px;
@@ -35,7 +14,7 @@ const Styles = styled(motion.div)`
     font-size: 24px;
     line-height: 150%;
 
-    span {
+    .spanHeading {
       border-bottom: 2px solid #dc2020;
       font-size: 24px;
     }
@@ -70,3 +49,22 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Heading = () => {
+  return (
+    <Styles className="setPadding">
+      <div className="content">
+        <h5>ABOUT</h5>
+        <motion.div className="text">
+          I am a Product Designer with over{" "}
+          <span className="spanHeading">three</span> years of experience in the
+          telecommunications industry designing{" "}
+          <span className="spanHeading">cross-platform</span> products,
+          including SaaS. My goal is to help businesses in creating products
+          that <span className="spanHeading">empower</span> people.
+        </motion.div>
+        <h5 className="values">VALUES</h5>
+      </div>
+    </Styles>
+  );
+};

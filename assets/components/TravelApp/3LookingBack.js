@@ -4,61 +4,8 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const LookingBack = () => {
-  const Width1023 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-  return (
-    <>
-      {Width1023 ? (
-        <Styles className="setPadding">
-          <div className="text">
-            <h1>
-              Looking back on travel in <span>2020</span>
-            </h1>
-            <p>
-              The tourism industry has been heavily impacted by the restrictions
-              due to the pandemic
-            </p>
-            <p>
-              • The global travel and tourism revenue for <span>2021</span> is
-              forecasted to increase by over <span>50%</span> compared to 2020
-            </p>
-            <p>
-              • The market is set to recover fully by <span>2023</span>{" "}
-            </p>
-            <div className="stats">According to Statista’s MMO </div>
-          </div>
 
-          <img src="/media/images/resized/Image 3.png" alt="auto-fill" />
-        </Styles>
-      ) : (
-        <Styles className="setPadding">
-          <img src="/media/images/resized/Image 3.png" alt="auto-fill" />
-          <div className="text">
-            <h1>
-              Looking back on travel in <span>2020</span>
-            </h1>
-            <p>
-              The tourism industry has been heavily impacted by the restrictions
-              due to the pandemic
-            </p>
-            <p>
-              • The global travel and tourism revenue for <span>2021</span> is
-              forecasted to increase by over <span>50%</span> compared to 2020
-            </p>
-            <p>
-              • The market is set to recover fully by <span>2023</span>{" "}
-            </p>
-            <div className="stats">According to Statista’s MMO </div>
-          </div>
-        </Styles>
-      )}
-    </>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesLookingBack = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -108,3 +55,58 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+
+export const LookingBack = () => {
+  const Width1023 = useMediaQuery({
+    query: "(max-device-width: 600px)",
+  });
+  return (
+    <>
+      {Width1023 ? (
+        <StylesLookingBack className="setPadding">
+          <div className="text">
+            <h1>
+              Looking back on travel in <span>2020</span>
+            </h1>
+            <p>
+              The tourism industry has been heavily impacted by the restrictions
+              due to the pandemic
+            </p>
+            <p>
+              • The global travel and tourism revenue for <span>2021</span> is
+              forecasted to increase by over <span>50%</span> compared to 2020
+            </p>
+            <p>
+              • The market is set to recover fully by <span>2023</span>{" "}
+            </p>
+            <div className="stats">According to Statista’s MMO </div>
+          </div>
+
+          <img src="/media/images/resized/Image 3.png" alt="auto-fill" />
+        </StylesLookingBack>
+      ) : (
+        <StylesLookingBack className="setPadding">
+          <img src="/media/images/resized/Image 3.png" alt="auto-fill" />
+          <div className="text">
+            <h1>
+              Looking back on travel in <span>2020</span>
+            </h1>
+            <p>
+              The tourism industry has been heavily impacted by the restrictions
+              due to the pandemic
+            </p>
+            <p>
+              • The global travel and tourism revenue for <span>2021</span> is
+              forecasted to increase by over <span>50%</span> compared to 2020
+            </p>
+            <p>
+              • The market is set to recover fully by <span>2023</span>{" "}
+            </p>
+            <div className="stats">According to Statista’s MMO </div>
+          </div>
+        </StylesLookingBack>
+      )}
+    </>
+  );
+};

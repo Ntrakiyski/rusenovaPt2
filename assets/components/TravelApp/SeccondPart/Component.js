@@ -9,100 +9,7 @@ import { AdditionalComponent } from "./AdditionalComponent";
 
 import { Video } from "../Video";
 
-export const Component = ({
-  para,
-  videoSrc,
-  number,
-  title,
-  image1,
-  image2,
-  yellowText,
-  boxText1,
-  boxText2,
-  boxText3,
-  multImg1,
-  multImg2,
-  multImg3,
-  multImg4,
-  boxText1Add,
-  boxText2Add,
-  mainImg1,
-  mainImg2,
-  videoSrcAdd,
-  lastImg,
-  boxTextLast,
-}) => {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
-  return (
-    <Styles className="setPadding">
-      <div className="heading">
-        <div className="orngNumber">
-          <h1>{number}</h1>
-        </div>
-        <h3>{title}</h3>
-      </div>
-      <div className="resCont">
-        <div className="media">
-          {videoSrc && <Video src={videoSrc} />}
-          {image1 && (
-            <div className="images">
-              {image1 && <img className="image1" src={image1} alt="here is" />}
-              {image2 && <img className="image2" src={image2} alt="here is" />}
-            </div>
-          )}
-          {!Width1023 && yellowText && (
-            <div className="description">{yellowText}</div>
-          )}
-        </div>
-        <div className="yellowTextColumn">
-          {Width1023 && yellowText && (
-            <div className="description">{yellowText}</div>
-          )}
-          {boxText1 && (
-            <div className="container">
-              <div className="box1">
-                <img src="/media/images/idea.png" alt="light bulb" />
-                <p>{boxText1}</p>
-              </div>
-              {boxText2 && (
-                <div className="box2">
-                  <img src="/media/images/idea.png" alt="light bulb" />
-                  <p>{boxText2}</p>
-                </div>
-              )}
-            </div>
-          )}
-          {boxText3 && (
-            <div className="container">
-              <div className="box1">
-                <img src="/media/images/idea.png" alt="light bulb" />
-                <p>{boxText3}</p>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <AdditionalComponent
-        multImg1={multImg1}
-        multImg2={multImg2}
-        multImg3={multImg3}
-        multImg4={multImg4}
-        boxText1={boxText1Add}
-        boxText2={boxText2Add}
-        mainImg1={mainImg1}
-        mainImg2={mainImg2}
-        videoSrc={videoSrcAdd}
-        lastImg={lastImg}
-        boxTextLast={boxTextLast}
-      />
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesComp = styled(motion.div)`
   //title
   .heading {
     display: flex;
@@ -191,7 +98,7 @@ const Styles = styled(motion.div)`
     .resCont {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
     }
     .container,
     .description {
@@ -223,3 +130,96 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Component = ({
+  para,
+  videoSrc,
+  number,
+  title,
+  image1,
+  image2,
+  yellowText,
+  boxText1,
+  boxText2,
+  boxText3,
+  multImg1,
+  multImg2,
+  multImg3,
+  multImg4,
+  boxText1Add,
+  boxText2Add,
+  mainImg1,
+  mainImg2,
+  videoSrcAdd,
+  lastImg,
+  boxTextLast,
+}) => {
+  const Width1023 = useMediaQuery({
+    query: "(min-device-width: 1023px)",
+  });
+  return (
+    <StylesComp className="setPadding">
+      <div className="heading">
+        <div className="orngNumber">
+          <h1>{number}</h1>
+        </div>
+        <h3>{title}</h3>
+      </div>
+      <div className="resCont">
+        <div className="media">
+          {videoSrc && <Video src={videoSrc} />}
+          {image1 && (
+            <div className="images">
+              {image1 && <img className="image1" src={image1} alt="here is" />}
+              {image2 && <img className="image2" src={image2} alt="here is" />}
+            </div>
+          )}
+          {!Width1023 && yellowText && (
+            <div className="description">{yellowText}</div>
+          )}
+        </div>
+        <div className="yellowTextColumn">
+          {Width1023 && yellowText && (
+            <div className="description">{yellowText}</div>
+          )}
+          {boxText1 && (
+            <div className="container">
+              <div className="box1">
+                <img src="/media/images/idea.png" alt="light bulb" />
+                <p>{boxText1}</p>
+              </div>
+              {boxText2 && (
+                <div className="box2">
+                  <img src="/media/images/idea.png" alt="light bulb" />
+                  <p>{boxText2}</p>
+                </div>
+              )}
+            </div>
+          )}
+          {boxText3 && (
+            <div className="container">
+              <div className="box1">
+                <img src="/media/images/idea.png" alt="light bulb" />
+                <p>{boxText3}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <AdditionalComponent
+        multImg1={multImg1}
+        multImg2={multImg2}
+        multImg3={multImg3}
+        multImg4={multImg4}
+        boxText1={boxText1Add}
+        boxText2={boxText2Add}
+        mainImg1={mainImg1}
+        mainImg2={mainImg2}
+        videoSrc={videoSrcAdd}
+        lastImg={lastImg}
+        boxTextLast={boxTextLast}
+      />
+    </StylesComp>
+  );
+};

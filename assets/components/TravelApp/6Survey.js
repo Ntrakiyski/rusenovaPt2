@@ -4,46 +4,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const Survey = () => {
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-
-  return (
-    <Styles className="setPadding">
-      <div className="row1  ">
-        <div className="text">
-          <h1>Online survey</h1>
-          <div className="subHead">Quantative research</div>
-          <p>
-            I wanted to validate my hyphotesis so I survayed 40+ individuals
-            using Typeform
-          </p>
-        </div>
-        <div className="chartAnswers">
-          <img src="/media/images/resized/Image 5.png" alt="answers" />
-        </div>
-      </div>
-      {!Width600 ? (
-        <img
-          className="chart"
-          src="/media/images/resized/Image 6.png"
-          alt="auto-fill"
-        />
-      ) : (
-        <div className="imgs">
-          <div>
-            <img className="Img80" src="/media/images/80.png" alt="auto-fill" />{" "}
-            <img className="Img60" src="/media/images/60.png" alt="auto-fill" />
-          </div>
-          <img className="Img75" src="/media/images/75.png" alt="auto-fill" />
-        </div>
-      )}
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesSurvey = styled(motion.div)`
   .row1 {
     display: flex;
     flex-direction: column;
@@ -159,3 +120,42 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Survey = () => {
+  const Width600 = useMediaQuery({
+    query: "(max-device-width: 600px)",
+  });
+
+  return (
+    <StylesSurvey className="setPadding">
+      <div className="row1  ">
+        <div className="text">
+          <h1>Online survey</h1>
+          <div className="subHead">Quantative research</div>
+          <p>
+            I wanted to validate my hyphotesis so I survayed 40+ individuals
+            using Typeform
+          </p>
+        </div>
+        <div className="chartAnswers">
+          <img src="/media/images/resized/Image 5.png" alt="answers" />
+        </div>
+      </div>
+      {!Width600 ? (
+        <img
+          className="chart"
+          src="/media/images/resized/Image 6.png"
+          alt="auto-fill"
+        />
+      ) : (
+        <div className="imgs">
+          <div>
+            <img className="Img80" src="/media/images/80.png" alt="auto-fill" />{" "}
+            <img className="Img60" src="/media/images/60.png" alt="auto-fill" />
+          </div>
+          <img className="Img75" src="/media/images/75.png" alt="auto-fill" />
+        </div>
+      )}
+    </StylesSurvey>
+  );
+};

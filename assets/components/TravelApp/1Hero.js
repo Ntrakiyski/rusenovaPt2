@@ -4,41 +4,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const Hero = () => {
-  const Width768 = useMediaQuery({
-    query: "(min-device-width: 768px)",
-  });
-  return (
-    <Styles className="title setPadding">
-      <div className="heading">
-        <p>2021 UX/UI</p>
-        <h1>Travel Planner App</h1>
-        <p>
-          A social-oriented app that helps you find places based on your
-          personality and plan your trip together with your friends
-        </p>
-        <div className="role">
-          <p>
-            <span> Role:</span> Product design
-          </p>
-          <p>
-            <span> Timeline:</span> 5 weeks
-          </p>
-        </div>
-      </div>
-      <img
-        src={
-          Width768
-            ? "/media/images/resized/Image 1.png"
-            : "/media/images/resized/Image 1R.png"
-        }
-        alt="auto-fill"
-      />
-    </Styles>
-  );
-};
-
-const Styles = styled(motion.div)`
+const StylesHero = styled(motion.div)`
   display: flex;
   flex-direction: column;
   h1 {
@@ -78,3 +44,37 @@ const Styles = styled(motion.div)`
     }
   }
 `;
+
+export const Hero = () => {
+  const Width768 = useMediaQuery({
+    query: "(min-device-width: 768px)",
+  });
+  return (
+    <StylesHero className="title setPadding">
+      <div className="heading">
+        <p>2021 UX/UI</p>
+        <h1>Travel Planner App</h1>
+        <p>
+          A social-oriented app that helps you find places based on your
+          personality and plan your trip together with your friends
+        </p>
+        <div className="role">
+          <p>
+            <span> Role:</span> Product design
+          </p>
+          <p>
+            <span> Timeline:</span> 5 weeks
+          </p>
+        </div>
+      </div>
+      <img
+        src={
+          Width768
+            ? "/media/images/resized/Image 1.png"
+            : "/media/images/resized/Image 1R.png"
+        }
+        alt="auto-fill"
+      />
+    </StylesHero>
+  );
+};

@@ -9,6 +9,114 @@ import { ProjectsStore } from "./ProjectsStore";
 
 import { useMediaQuery } from "react-responsive";
 
+const StylesProjects = styled(motion.div)`
+  //Space between the footer
+  margin-bottom: 60px;
+  .infoProject1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 40px;
+    }
+  }
+  .images {
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-height: 475px;
+      max-width: 201px;
+      margin-bottom: 40px;
+    }
+    .paragraphs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 40px;
+    }
+  }
+  .lineDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .line {
+      height: 1px;
+      width: 70%;
+      max-width: 760px;
+      background: #5b5b5b;
+      margin: 40px 0;
+    }
+  }
+  .lastPara {
+    max-width: 1200px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .info {
+      justify-content: flex-start;
+      align-items: flex-start;
+      .images {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 40px 0;
+
+        img:first-child {
+          margin-bottom: 0px;
+        }
+        img {
+          margin-bottom: 0;
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1023px) {
+    .images {
+      flex-direction: row;
+      max-width: 562px;
+    }
+    .projects {
+      max-width: 1200px;
+    }
+
+    .paragraphs,
+    .infoProject1 {
+      grid-template-columns: repeat(auto-fill, minmax(422px, 1fr));
+      gap: 80px !important;
+
+      .content {
+        grid-template-columns: repeat(2, minmax(340px, 422px));
+        gap: 160px;
+      }
+    }
+    .infoProject1 {
+      justify-content: flex-start;
+      .gridSet {
+        grid-template-columns: repeat(auto-fill, minmax(350, 1fr));
+      }
+    }
+    .lineDiv {
+      .line {
+        margin: 100px 0;
+      }
+    }
+
+    .imageAlone {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
+
 export const Projects = () => {
   const Width768 = useMediaQuery({
     query: "(max-device-width: 768px)",
@@ -19,7 +127,7 @@ export const Projects = () => {
     </>
   );
   return (
-    <Styles className="setPadding">
+    <StylesProjects className="setPadding">
       <div className="title">
         <h5>SOME OF THE PROJECTS I WORKED ON</h5>
       </div>
@@ -42,11 +150,11 @@ export const Projects = () => {
           <div className="content">
             <ParaComp
               title="My Role"
-              content="My role was to understand the problems that users were experiencing, validate hypotetical solutions, and design a better interface of the home screen."
+              content="My role was to understand the problems that users were experiencing, validate hypothetical solutions, and design a better interface of the home screen."
             />
             <ParaComp
               title="Project deliverables"
-              content="Clear information and call to actions on the home sceen."
+              content="Clear information and call to action on the home screen."
             />
           </div>
         </div>
@@ -181,113 +289,6 @@ export const Projects = () => {
         E-shop, Business Portal and Digital Office App. You can reach me out if
         you want to learn more about my experience!
       </p>
-    </Styles>
+    </StylesProjects>
   );
 };
-const Styles = styled(motion.div)`
-  //Space between the footer
-  margin-bottom: 60px;
-  .infoProject1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .content {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 40px;
-    }
-  }
-  .images {
-  }
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    img {
-      max-height: 475px;
-      max-width: 201px;
-      margin-bottom: 40px;
-    }
-    .paragraphs {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 40px;
-    }
-  }
-  .lineDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .line {
-      height: 1px;
-      width: 70%;
-      max-width: 760px;
-      background: #5b5b5b;
-      margin: 40px 0;
-    }
-  }
-  .lastPara {
-    max-width: 1200px;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .info {
-      justify-content: flex-start;
-      align-items: flex-start;
-      .images {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 40px 0;
-
-        img:first-child {
-          margin-bottom: 0px;
-        }
-        img {
-          margin-bottom: 0;
-          margin-right: 60px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (min-width: 1023px) {
-    .images {
-      flex-direction: row;
-      max-width: 562px;
-    }
-    .projects {
-      max-width: 1200px;
-    }
-
-    .paragraphs,
-    .infoProject1 {
-      grid-template-columns: repeat(auto-fill, minmax(422px, 1fr));
-      gap: 80px !important;
-
-      .content {
-        grid-template-columns: repeat(2, minmax(340px, 422px));
-        gap: 160px;
-      }
-    }
-    .infoProject1 {
-      justify-content: flex-start;
-      .gridSet {
-        grid-template-columns: repeat(auto-fill, minmax(350, 1fr));
-      }
-    }
-    .lineDiv {
-      .line {
-        margin: 100px 0;
-      }
-    }
-
-    .imageAlone {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-`;
