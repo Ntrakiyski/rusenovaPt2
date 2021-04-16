@@ -20,7 +20,7 @@ export const SectionLeft = ({ imgSrc, title, paragraph, number }) => {
             <h3>{title}</h3>
           </>
         )}
-        <div className="res">
+        <div className="response">
           <div className="image">
             <img src={imgSrc} alt="talk on a table" />
           </div>
@@ -63,13 +63,20 @@ const Styles = styled(motion.div)`
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
   }
   @media only screen and (min-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .text {
+      max-width: 1200px;
+    }
     .image {
       margin-bottom: 50px;
       min-width: 380px;
       max-width: 574px;
       height: 100%;
     }
-    .res {
+    .response {
       display: flex;
       justify-content: space-between;
     }

@@ -45,7 +45,7 @@ const AboutMeStyles = styled(motion.div)`
       .content {
         //set the width of the content
 
-        max-width: 1300px;
+        max-width: 1200px;
       }
 
       h5 {
@@ -127,7 +127,7 @@ const AboutMe = () => {
             </div>
           </>
         ) : (
-          <Hamburger />
+          <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
         )}
         <Footer />
       </div>

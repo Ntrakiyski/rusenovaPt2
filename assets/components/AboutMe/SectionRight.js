@@ -67,11 +67,20 @@ const Styles = styled(motion.div)`
   .heading {
     display: flex;
     flex-direction: column;
-    padding-right: 80px;
+    padding-right: 110px;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
   }
   @media only screen and (min-width: 1023px) {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      display: flex;
+    }
     .image {
       margin-top: 0;
       margin-bottom: 50px;
@@ -82,6 +91,7 @@ const Styles = styled(motion.div)`
     .response {
       display: flex;
       justify-content: space-between;
+      width: 1200px;
     }
     p {
       width: 420px;

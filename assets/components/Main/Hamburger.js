@@ -24,19 +24,22 @@ const HamburgerStyles = styled(motion.div)`
   }
 `;
 
-export const Hamburger = () => {
+export const Hamburger = ({ setChangeLoc, changeLoc }) => {
   const location = useRouter();
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-    }
-  }, [location]);
 
   const Scroll = () => {
     setTimeout(function () {
       window.scroll({ top: 800, behavior: "smooth" });
     }, 100);
+    setChangeLoc(!changeLoc);
   };
+  const AboutFunc = () => {
+    setChangeLoc(!changeLoc);
+  };
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   return (
     <HamburgerStyles
@@ -44,7 +47,7 @@ export const Hamburger = () => {
       animate={{ x: 0, transition: { duration: 0.4 } }}
     >
       <div className="menues">
-        <Link href="/">
+        <Link href={"/"}>
           <a>
             <motion.div
               onClick={Scroll}
@@ -57,7 +60,11 @@ export const Hamburger = () => {
         </Link>
         <Link href="/about">
           <a>
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              onClick={AboutFunc}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
               About
             </motion.div>
           </a>

@@ -59,7 +59,7 @@ function Index() {
             />
           </>
         ) : (
-          <Hamburger />
+          <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
         )}
         <Footer />
       </div>
