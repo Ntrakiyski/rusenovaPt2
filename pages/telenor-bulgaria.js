@@ -19,7 +19,6 @@ import { useMediaQuery } from "react-responsive";
 
 import { ContainerApp, Container } from "../assets/Animation.js";
 
-import { MediaQuerySSR } from "react-responsive-ssr";
 
 import { Context as ResponsiveContext } from "react-responsive";
 

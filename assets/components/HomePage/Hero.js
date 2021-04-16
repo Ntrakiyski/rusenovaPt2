@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 import { NavRes } from "../Main/NavRes";
 import { Nav } from "../Main/Nav";
-import { MediaQuerySSR } from "react-responsive-ssr";
 
 //import image
 
