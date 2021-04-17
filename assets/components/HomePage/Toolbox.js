@@ -110,7 +110,7 @@ const Styles = styled(motion.div)`
   @media only screen and (min-width: 1023px) {
     margin-top: 100px;
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
     .toolbox {
@@ -128,7 +128,7 @@ const Styles = styled(motion.div)`
     }
     .content {
       //set the width of the content
-      max-width: 1200px;
+      width: 1200px;
       flex-direction: row;
       justify-content: space-between;
     }
