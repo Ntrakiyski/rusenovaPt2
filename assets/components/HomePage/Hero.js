@@ -98,6 +98,7 @@ const Styles = styled.div`
   }
   h1 {
     font-family: "Gilroy-Light" !important;
+    font-weight: 400;
   }
   .rowFirst {
     max-width: 1200px;
