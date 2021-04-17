@@ -91,43 +91,46 @@ const TravelPage = () => {
         </>
       )}
       {!changeLoc ? (
-        <>
-          <div className="content">
-            <Hero />
-            <TheProcess loaded={loaded} />
-            <LookingBack />
-            <ProblemStatement />
-            <Solution />
-            <Survey />
-            <Interviews />
-            <Emphaty />
-            <Persona />
-            <UserJourney />
-          </div>
-          <Functionalities />
-          <div className="content">
-            <Architecture />
-          </div>
-          <Sketching />
-          <div className="content">
-            <Styling />
-            <SeccondPart />
-          </div>
-          <div className="footer">
-            <FooterNavi
-              number="01"
-              menu="Telenor experience"
-              to="/telenor-bulgaria"
-            />
-            <FooterNavi number="02" menu="About" to="/about" />
-            <FooterNavi
-              number="03"
-              menu="Resume"
-              to="/media/GloriaPdf.pdf"
-              target={"_blank"}
-            />
-          </div>
-        </>
+        loaded && (
+          <>
+            <div className="content">
+              <Hero />
+              <TheProcess />
+              <LookingBack />
+              <ProblemStatement />
+              <Solution />
+              <Survey />
+              <Interviews />
+              <Emphaty />
+              <Persona />
+              <UserJourney />
+            </div>
+
+            <Functionalities />
+            <div className="content">
+              <Architecture />
+            </div>
+            <Sketching />
+            <div className="content">
+              <Styling />
+              <SeccondPart />
+            </div>
+            <div className="footer">
+              <FooterNavi
+                number="01"
+                menu="Telenor experience"
+                to="/telenor-bulgaria"
+              />
+              <FooterNavi number="02" menu="About" to="/about" />
+              <FooterNavi
+                number="03"
+                menu="Resume"
+                to="/media/GloriaPdf.pdf"
+                target={"_blank"}
+              />
+            </div>
+          </>
+        )
       ) : (
         <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
       )}
