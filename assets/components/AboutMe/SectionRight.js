@@ -5,46 +5,44 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const SectionRight = ({ imgSrc, title, paragraph, number, loaded }) => {
+export const SectionRight = ({ imgSrc, title, paragraph, number }) => {
   const Width1023 = useMediaQuery({
     query: "(min-device-width: 1023px)",
   });
 
   return (
     <Styles className="setPadding">
-      {loaded && (
-        <div className="text">
-          {!Width1023 && (
-            <div>
-              <span>- {number} -</span>
-              <h3>{title}</h3>
-            </div>
-          )}
-          {Width1023 ? (
-            <div className="Flexresponse">
-              <motion.div className="heading">
-                {Width1023 && (
-                  <div>
-                    <span>- {number} -</span>
-                    <h3>{title}</h3>
-                  </div>
-                )}
-                <p>{paragraph}</p>
-              </motion.div>
-              <motion.div className="image">
-                <img src={imgSrc} alt="talk on a table" />
-              </motion.div>
-            </div>
-          ) : (
-            <div className="Flexresponse">
-              <div className="image">
-                <img src={imgSrc} alt="talk on a table" />
-              </div>
+      <div className="text">
+        {!Width1023 && (
+          <div>
+            <span>- {number} -</span>
+            <h3>{title}</h3>
+          </div>
+        )}
+        {Width1023 ? (
+          <div className="Flexresponse">
+            <motion.div className="heading">
+              {Width1023 && (
+                <div>
+                  <span>- {number} -</span>
+                  <h3>{title}</h3>
+                </div>
+              )}
               <p>{paragraph}</p>
+            </motion.div>
+            <motion.div className="image">
+              <img src={imgSrc} alt="talk on a table" />
+            </motion.div>
+          </div>
+        ) : (
+          <div className="Flexresponse">
+            <div className="image">
+              <img src={imgSrc} alt="talk on a table" />
             </div>
-          )}
-        </div>
-      )}
+            <p>{paragraph}</p>
+          </div>
+        )}
+      </div>
     </Styles>
   );
 };

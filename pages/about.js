@@ -90,14 +90,15 @@ const AboutMe = () => {
         {!changeLoc ? (
           <>
             <Heading />
-            <SectionRight
-              loaded={loaded}
-              number="01"
-              key="1"
-              title="Collaboration"
-              paragraph="Everything, in my opinion, begins with learning to listen to one another and understand different points of view. When designing a product, open and effective communication is critical."
-              imgSrc="/media/images/TableTalk.png"
-            />
+            {loaded && (
+              <SectionRight
+                number="01"
+                key="1"
+                title="Collaboration"
+                paragraph="Everything, in my opinion, begins with learning to listen to one another and understand different points of view. When designing a product, open and effective communication is critical."
+                imgSrc="/media/images/TableTalk.png"
+              />
+            )}
             <SectionLeft
               key="2"
               number="02"
