@@ -62,7 +62,7 @@ export const TelenorWork = () => {
               </div>
               <Link href="/telenor-bulgaria">
                 <a>
-                  <div className="down-arrow ">
+                  <div className="down-arrow CTA">
                     <motion.img
                       initial={{ x: -5 }}
                       animate={{ x: 5 }}
