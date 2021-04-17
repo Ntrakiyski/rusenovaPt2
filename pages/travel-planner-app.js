@@ -94,7 +94,7 @@ const TravelPage = () => {
         <>
           <div className="content">
             <Hero />
-            <TheProcess />
+            <TheProcess loaded={loaded} />
             <LookingBack />
             <ProblemStatement />
             <Solution />

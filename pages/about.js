@@ -91,6 +91,7 @@ const AboutMe = () => {
           <>
             <Heading />
             <SectionRight
+              loaded={loaded}
               number="01"
               key="1"
               title="Collaboration"

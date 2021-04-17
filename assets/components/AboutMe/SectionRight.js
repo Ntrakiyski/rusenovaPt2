@@ -5,44 +5,46 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-export const SectionRight = ({ imgSrc, title, paragraph, number }) => {
+export const SectionRight = ({ imgSrc, title, paragraph, number, loaded }) => {
   const Width1023 = useMediaQuery({
     query: "(min-device-width: 1023px)",
   });
 
   return (
     <Styles className="setPadding">
-      <div className="text">
-        {!Width1023 && (
-          <div>
-            <span>- {number} -</span>
-            <h3>{title}</h3>
-          </div>
-        )}
-        {Width1023 ? (
-          <div className="response">
-            <motion.div className="heading">
-              {Width1023 && (
-                <div>
-                  <span>- {number} -</span>
-                  <h3>{title}</h3>
-                </div>
-              )}
-              <p>{paragraph}</p>
-            </motion.div>
-            <motion.div className="image">
-              <img src={imgSrc} alt="talk on a table" />
-            </motion.div>
-          </div>
-        ) : (
-          <div className="response">
-            <div className="image">
-              <img src={imgSrc} alt="talk on a table" />
+      {loaded && (
+        <div className="text">
+          {!Width1023 && (
+            <div>
+              <span>- {number} -</span>
+              <h3>{title}</h3>
             </div>
-            <p>{paragraph}</p>
-          </div>
-        )}
-      </div>
+          )}
+          {Width1023 ? (
+            <div className="Flexresponse">
+              <motion.div className="heading">
+                {Width1023 && (
+                  <div>
+                    <span>- {number} -</span>
+                    <h3>{title}</h3>
+                  </div>
+                )}
+                <p>{paragraph}</p>
+              </motion.div>
+              <motion.div className="image">
+                <img src={imgSrc} alt="talk on a table" />
+              </motion.div>
+            </div>
+          ) : (
+            <div className="Flexresponse">
+              <div className="image">
+                <img src={imgSrc} alt="talk on a table" />
+              </div>
+              <p>{paragraph}</p>
+            </div>
+          )}
+        </div>
+      )}
     </Styles>
   );
 };
@@ -59,7 +61,7 @@ const Styles = styled(motion.div)`
   }
   .image {
     margin: 50px 0 30px 0;
-  
+
     img {
       width: 100%;
     }
@@ -72,7 +74,6 @@ const Styles = styled(motion.div)`
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
   }
   @media only screen and (min-width: 1023px) {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +89,7 @@ const Styles = styled(motion.div)`
       max-width: 574px;
       height: 100%;
     }
-    .response {
+    .Flexresponse {
       display: flex;
       justify-content: space-between;
       width: 1200px;
