@@ -88,9 +88,10 @@ const AboutMe = () => {
       )}
       <div className="content">
         {!changeLoc ? (
-          <>
-            <Heading />
-            {loaded && (
+          loaded && (
+            <>
+              <Heading />
+
               <SectionRight
                 number="01"
                 key="1"
@@ -98,34 +99,35 @@ const AboutMe = () => {
                 paragraph="Everything, in my opinion, begins with learning to listen to one another and understand different points of view. When designing a product, open and effective communication is critical."
                 imgSrc="/media/images/TableTalk.png"
               />
-            )}
-            <SectionLeft
-              key="2"
-              number="02"
-              title="Action"
-              paragraph="I believe that creativity can improve our everyday life, but we also have to be humble and grounded if we want to go through the whole process."
-              imgSrc="/media/images/TelenorDoor.png"
-            />
-            <SectionRight
-              key="3"
-              number="03"
-              title="Quality"
-              paragraph="I love what I do, and I pay attention to the smallest details. In my experience, Agile, design thinking and Sprints help to carry out projects and to improve their quality."
-              imgSrc="/media/images/BoardDraw.png"
-            />
-            <MyStory />
-            <Transition />
 
-            <div className="foot">
-              <FooterNavi
-                number="01"
-                to="/media/GloriaPdf.pdf"
-                target={"_blank"}
-                menu="Resume"
+              <SectionLeft
+                key="2"
+                number="02"
+                title="Action"
+                paragraph="I believe that creativity can improve our everyday life, but we also have to be humble and grounded if we want to go through the whole process."
+                imgSrc="/media/images/TelenorDoor.png"
               />
-              <FooterNavi number="02" to="/" menu="Projects" funct={true} />
-            </div>
-          </>
+              <SectionRight
+                key="3"
+                number="03"
+                title="Quality"
+                paragraph="I love what I do, and I pay attention to the smallest details. In my experience, Agile, design thinking and Sprints help to carry out projects and to improve their quality."
+                imgSrc="/media/images/BoardDraw.png"
+              />
+              <MyStory />
+              <Transition />
+
+              <div className="foot">
+                <FooterNavi
+                  number="01"
+                  to="/media/GloriaPdf.pdf"
+                  target={"_blank"}
+                  menu="Resume"
+                />
+                <FooterNavi number="02" to="/" menu="Projects" funct={true} />
+              </div>
+            </>
+          )
         ) : (
           <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
         )}
