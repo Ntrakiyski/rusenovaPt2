@@ -29,7 +29,7 @@ import { Sketching } from "../assets/components/TravelApp/12Sketching";
 import { Styling } from "../assets/components/TravelApp/13Styles";
 import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
-import { MediaQuerySSR } from 'react-responsive-ssr';
+import { MediaQuerySSR } from "react-responsive-ssr";
 
 const TravelAppStyles = styled(motion.div)`
   margin-top: 60px;
@@ -113,24 +113,25 @@ const TravelPage = () => {
             <Styling />
             <SeccondPart />
           </div>
+          <div className="footer">
+            <FooterNavi
+              number="01"
+              menu="Telenor experience"
+              to="/telenor-bulgaria"
+            />
+            <FooterNavi number="02" menu="About" to="/about" />
+            <FooterNavi
+              number="03"
+              menu="Resume"
+              to="/media/GloriaPdf.pdf"
+              target={"_blank"}
+            />
+          </div>
         </>
       ) : (
-        <Hamburger />
+        <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
       )}
-      <div className="footer">
-        <FooterNavi
-          number="01"
-          menu="Telenor experience"
-          to="/telenor-bulgaria"
-        />
-        <FooterNavi number="02" menu="About" to="/about" />
-        <FooterNavi
-          number="03"
-          menu="Resume"
-          to="/media/GloriaPdf.pdf"
-          target={"_blank"}
-        />
-      </div>
+
       <Footer />
     </TravelAppStyles>
   );

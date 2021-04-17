@@ -49,7 +49,7 @@ const StylesProjects = styled(motion.div)`
       width: 70%;
       max-width: 760px;
       background: #5b5b5b;
-      margin: 40px 0;
+      margin: 80px 0;
     }
   }
   .lastPara {
@@ -198,7 +198,7 @@ export const Projects = () => {
         {/* 03 - E-INVOICE */}
         <ProjectsStore
           number="03"
-          title="E-INVOICE"
+          title="E-invoice"
           sub="PAYMENTS"
           stores="true"
           image1={
@@ -260,7 +260,7 @@ export const Projects = () => {
       {/* 04 - E-vignette */}
       <ProjectsStore
         number="05"
-        title="E-VIGNETTE"
+        title="E-vignette"
         sub="Telenor.bg"
         image3={
           Width768

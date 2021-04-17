@@ -12,6 +12,7 @@ const HamburgerStyles = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 
   .menues {
     text-align: center;
@@ -36,10 +37,6 @@ export const Hamburger = ({ setChangeLoc, changeLoc }) => {
   const AboutFunc = () => {
     setChangeLoc(!changeLoc);
   };
-
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
 
   return (
     <HamburgerStyles

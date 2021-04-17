@@ -109,11 +109,19 @@ const StylesStyling = styled(motion.div)`
       border-radius: 20px;
     }
   }
+  @media only screen and (min-width: 768px) {
+    .typography {
+      margin-top: 30px;
+    }
+  }
   @media only screen and (min-width: 1023px) {
     margin-bottom: 100px;
     .row1,
     .typography {
       min-height: 300px;
+    }
+    .typography {
+      margin-top: 30px;
     }
     #font {
       font-size: 55px;

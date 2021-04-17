@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const FooterStyles = styled(motion.div)`
   padding-top: 60px;
+
   .heading {
     display: flex;
     flex-direction: column;

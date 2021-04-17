@@ -58,7 +58,8 @@ const StylesSurvey = styled(motion.div)`
       justify-content: space-between;
     }
     img {
-      width: 160px;
+      max-width: 200px;
+      width: 140px;
       height: 100%;
     }
 
@@ -89,6 +90,9 @@ const StylesSurvey = styled(motion.div)`
       span {
         font-size: 14px;
       }
+    }
+    .chart {
+      max-width: 620px;
     }
     .chartAnswers {
       img {

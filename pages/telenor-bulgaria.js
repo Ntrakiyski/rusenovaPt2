@@ -16,7 +16,7 @@ import { MyRole } from "../assets/components/TelenorWork/MyRole";
 import { Heading } from "../assets/components/TelenorWork/Heading";
 
 import { useMediaQuery } from "react-responsive";
-import { MediaQuerySSR } from 'react-responsive-ssr';
+import { MediaQuerySSR } from "react-responsive-ssr";
 
 import { ContainerApp, Container } from "../assets/Animation.js";
 
@@ -29,6 +29,7 @@ const Styles = styled(motion.div)`
   //Main title - My experience...
   h5 {
     margin: 0 0 40px 0;
+    line-height: 150%;
   }
   //Section titles - Internships...
   h3 {
@@ -132,7 +133,7 @@ const TelenorPage = () => {
             <Projects />
             <div className="foot">
               <FooterNavi number="01" menu="About" to="/about" />
-              <FooterNavi number="02" menu="Projects" to="/" />
+              <FooterNavi number="02" menu="Projects" to="/" funct="true" />
               <FooterNavi
                 number="03"
                 menu="Resume"
@@ -142,7 +143,7 @@ const TelenorPage = () => {
             </div>
           </>
         ) : (
-          <Hamburger />
+          <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
         )}
         <Footer />
       </div>

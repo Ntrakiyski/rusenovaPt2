@@ -40,31 +40,29 @@ export const Nav = ({ bgColor, setChangeLoc, changeLoc }) => {
         </Link>
         <div className="nav">
           <Link href={"/"}>
-            <a>
+            <a className="navItem">
               <motion.div
                 onClick={Scroll}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
+                
               >
                 Projects
               </motion.div>
             </a>
           </Link>
           <Link href={"/about"}>
-            <a>
+            <a className="navItem">
               {" "}
               <motion.div
                 className="middle"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
+               
               >
                 About
               </motion.div>
             </a>
           </Link>
 
-          <a href="/media/GloriaPdf.pdf" target="_blank">
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+          <a className="navItem" href="/media/GloriaPdf.pdf" target="_blank">
+            <motion.div >
               Resume
             </motion.div>
           </a>

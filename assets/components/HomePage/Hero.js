@@ -15,7 +15,7 @@ export const Hero = ({ loaded, changeLoc, setChangeLoc }) => {
     query: "(min-device-width: 1023px)",
   });
   const Scroll = () => {
-    window.scrollTo({ top: 800, behavior: "smooth" });
+    window.scrollTo({ top: 830, behavior: "smooth" });
   };
   return (
     <AnimatePresence>
@@ -96,7 +96,11 @@ const Styles = styled.div`
     align-items: center;
     font-size: 18px;
   }
+  h1 {
+    font-family: "Gilroy-Light" !important;
+  }
   .rowFirst {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,8 +109,7 @@ const Styles = styled.div`
     max-width: 375px;
 
     img {
-      min-width: 200px;
-      width: 100%;
+      max-width: 280px;
     }
     span {
       font-size: 32px;
@@ -115,6 +118,9 @@ const Styles = styled.div`
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     margin-top: 80px;
+    img {
+      max-width: 375px;
+    }
   }
   @media only screen and (min-width: 1023px) {
     margin-top: 80px;

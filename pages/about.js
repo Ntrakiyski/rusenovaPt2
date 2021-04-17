@@ -62,9 +62,7 @@ const AboutMe = () => {
     setLoaded(true);
   }, [loaded]);
   const [changeLoc, setChangeLoc] = useState(false);
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
+
   const Width600 = useMediaQuery({
     query: "(min-device-width: 600px)",
   });
@@ -123,7 +121,7 @@ const AboutMe = () => {
                 target={"_blank"}
                 menu="Resume"
               />
-              <FooterNavi number="02" to="/" menu="Projects" />
+              <FooterNavi number="02" to="/" menu="Projects" funct={true} />
             </div>
           </>
         ) : (

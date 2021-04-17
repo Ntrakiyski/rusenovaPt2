@@ -6,7 +6,6 @@ import { useMediaQuery } from "react-responsive";
 
 const StylesFunctionalities = styled(motion.div)`
   h1 {
-    padding: 20px 0 20px 15px;
   }
   img {
     width: 100%;

@@ -44,7 +44,7 @@ export const TheProcess = () => {
           src={
             Width768
               ? "/media/images/resized/Image 2.png"
-              : "/media/images/resized/Image 2R.png"
+              : "/media/images/resized/Image2R.png"
           }
           alt="auto-fill"
         />

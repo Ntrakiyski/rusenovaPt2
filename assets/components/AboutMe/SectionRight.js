@@ -59,7 +59,7 @@ const Styles = styled(motion.div)`
   }
   .image {
     margin: 50px 0 30px 0;
-    width: calc(100% - 13px);
+  
     img {
       width: 100%;
     }

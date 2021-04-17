@@ -9,8 +9,9 @@ const StylesProjectStore = styled(motion.div)`
   padding: 0 0 40px 0;
   .stores {
     img {
-      margin: 0 20px 20px 0;
-      max-width: 150px;
+      margin: 0 15px 20px 0;
+      width: 141px;
+      height: 40px;
     }
   }
   .images {

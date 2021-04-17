@@ -15,7 +15,7 @@ const StylesFooterNavi = styled(motion.div)`
       font-family: "Gilroy-Light";
       margin: 10px 0;
 
-      font-size: 24px;
+      font-size: 23px;
       text-transform: uppercase;
       cursor: pointer;
     }
@@ -55,7 +55,12 @@ const StylesFooterNavi = styled(motion.div)`
   }
 `;
 
-export const FooterNavi = ({ number, menu, to, target }) => {
+export const FooterNavi = ({ number, menu, to, target, funct }) => {
+  const ScrollTo = () => {
+    setTimeout(function () {
+      window.scroll({ top: 800, behavior: "smooth" });
+    }, 100);
+  };
   return (
     <StylesFooterNavi className="setPadding">
       <div className="contentT">
@@ -66,6 +71,7 @@ export const FooterNavi = ({ number, menu, to, target }) => {
               <motion.div
                 whileHover={{ x: 30, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onClick={funct ? ScrollTo : null}
               >
                 {menu}
               </motion.div>

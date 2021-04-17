@@ -50,7 +50,7 @@ const Styles = styled(motion.div)`
   .content {
     display: flex;
     flex-direction: column;
- }
+  }
 
   //Logos
   .logos {
@@ -62,6 +62,8 @@ const Styles = styled(motion.div)`
 
       img {
         margin-right: 20px;
+        width: 45px;
+        height: 45px;
       }
     }
   }
@@ -97,7 +99,7 @@ const Styles = styled(motion.div)`
     .skills {
       margin-top: 0px;
       div {
-        width: 500px;
+        width: 400px;
       }
       p {
         width: 250px;
@@ -117,8 +119,8 @@ const Styles = styled(motion.div)`
       padding-right: 60px;
     }
     .skills {
-      min-width: 350px;
-      width: 572px;
+      min-width: 400px;
+      width: 372px;
 
       h5 {
         margin-top: 0;
@@ -126,9 +128,17 @@ const Styles = styled(motion.div)`
     }
     .content {
       //set the width of the content
-
+      max-width: 1200px;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
+    }
+    .logos {
+      .row1 {
+        img {
+          width: 68px;
+          height: 68px;
+        }
+      }
     }
   }
 `;

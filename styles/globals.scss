@@ -231,6 +231,30 @@ h3 {
     font-size: 18px;
     font-weight: 700;
   }
+  //border animation
+
+  .navItem {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      transition: 0.3s;
+      content: "";
+      width: 0;
+      left: 50%;
+      bottom: -5px;
+      height: 2px;
+      background: #dc2020;
+    }
+
+    &:hover {
+      cursor: pointer;
+      &:after {
+        width: 100%;
+        left: -1px;
+      }
+    }
+  }
 }
 
 /* mobile mode*/
