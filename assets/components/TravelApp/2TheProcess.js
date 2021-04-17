@@ -31,26 +31,22 @@ export const TheProcess = ({ loaded }) => {
   });
   return (
     <StylesTheProcess className="setPadding">
-      {loaded && (
-        <>
-          <h1>The process</h1>
-          <p>
-            The process and the tools I use may vary depending on project goals,
-            business needs, the complexity of the problem, time, etc. For this
-            project I will use the following process.
-          </p>
-          <div className="images">
-            <img
-              src={
-                Width768
-                  ? "/media/images/resized/Image 2.png"
-                  : "/media/images/resized/Image2R.png"
-              }
-              alt="auto-fill"
-            />
-          </div>
-        </>
-      )}
+      <h1>The process</h1>
+      <p>
+        The process and the tools I use may vary depending on project goals,
+        business needs, the complexity of the problem, time, etc. For this
+        project I will use the following process.
+      </p>
+      <div className="images">
+        <img
+          src={
+            Width768
+              ? "/media/images/resized/Image 2.png"
+              : "/media/images/resized/Image2R.png"
+          }
+          alt="auto-fill"
+        />
+      </div>
     </StylesTheProcess>
   );
 };
