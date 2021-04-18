@@ -3,8 +3,6 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 
-import { NavRes } from "../Main/NavRes";
-import { Nav } from "../Main/Nav";
 
 //import image
 

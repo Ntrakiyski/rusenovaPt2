@@ -6,14 +6,10 @@ import { motion } from "framer-motion";
 
 export const Toolbox = () => {
   return (
-    <Styles>
-      <div className="content setPadding">
+    <Styles className="setPadding">
+      <div className="grid">
         <div className="toolbox">
           <div className="heading">
-            {/* <div className="rect">
-                <div className="rect1"></div>
-                <div className="rect2"></div>
-              </div> */}
             <h5>TOOLBOX</h5>
           </div>
           <div className="logos">
@@ -50,6 +46,7 @@ const Styles = styled(motion.div)`
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   //Logos
@@ -74,15 +71,11 @@ const Styles = styled(motion.div)`
   }
   .skills {
     margin-top: 25px;
-    .div {
-      display: flex;
-      p {
-        width: 50%;
-      }
-      p:nth-child(2) {
-        margin-left: 0px;
-      }
+
+    p:nth-child(2) {
+      margin-left: 0px;
     }
+
     p {
       margin: 10px 0;
       font-size: 20px;
@@ -98,9 +91,7 @@ const Styles = styled(motion.div)`
     margin-bottom: 80px;
     .skills {
       margin-top: 0px;
-      div {
-        width: 400px;
-      }
+
       p {
         width: 250px;
       }
@@ -108,30 +99,22 @@ const Styles = styled(motion.div)`
   }
 
   @media only screen and (min-width: 1023px) {
-    margin-top: 100px;
-    display: flex;
     align-items: center;
     justify-content: center;
-
-    .toolbox {
-      min-width: 410px;
-      width: 568px;
-      padding-right: 60px;
+    .grid {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
-    .skills {
-      min-width: 400px;
-      width: 372px;
-
+    .skills,
+    .toolbox {
+      margin-top: 0;
       h5 {
         margin-top: 0;
       }
     }
-    .content {
-      //set the width of the content
-      width: 1200px;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+
     .logos {
       .row1 {
         img {
@@ -141,4 +124,5 @@ const Styles = styled(motion.div)`
       }
     }
   }
+ 
 `;

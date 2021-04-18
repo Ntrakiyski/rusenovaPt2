@@ -15,6 +15,7 @@ import { NavRes } from "../assets/components/Main/NavRes.js";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuerySSR } from "react-responsive-ssr";
 import { Hamburger } from "../assets/components/Main/Hamburger.js";
+import { Testemonial } from "../assets/components/HomePage/Testemonial.js";
 
 function Index() {
   const Width1023 = useMediaQuery({
@@ -49,6 +50,7 @@ function Index() {
             <Hero loaded={loaded} />
             <PlannerApp />
             <TelenorWork />
+            <Testemonial />
             <Toolbox />
             <FooterNavi number="01" menu="About" to="/about" />
             <FooterNavi

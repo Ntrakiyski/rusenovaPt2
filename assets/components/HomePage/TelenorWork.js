@@ -243,6 +243,9 @@ const ShowWorkStyles = styled(motion.div)`
   }
 
   @media only screen and (min-width: 1023px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .imageNew {
       max-width: 502px;
       img {
@@ -253,12 +256,13 @@ const ShowWorkStyles = styled(motion.div)`
       }
     }
     a {
-      width: 568px;
+      max-width: 568px;
     }
     .res {
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      width: 1200px;
     }
 
     .heading h1,
