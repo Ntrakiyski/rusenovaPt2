@@ -62,6 +62,7 @@ const Styles = styled.div`
       font-size: 18px;
       font-weight: 700;
       font-family: "Gilroy-ExtraBold";
+      font-style: italic;
     }
   }
   .imageDiv {
