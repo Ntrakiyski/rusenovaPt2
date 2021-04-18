@@ -75,7 +75,6 @@ const Styles = styled.div`
       height: 94px;
     }
     .name {
-      max-width: 280px;
       margin-left: 30px;
       div {
         font-size: 18px;
