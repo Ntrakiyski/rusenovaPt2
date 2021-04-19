@@ -36,6 +36,7 @@ const StylesArchitecture = styled(motion.div)`
   }
 
   @media only screen and (min-width: 1023px) {
+   
     h1 {
       margin: 50px 0;
     }

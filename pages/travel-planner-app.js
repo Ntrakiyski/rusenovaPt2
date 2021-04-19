@@ -40,6 +40,7 @@ const TravelAppStyles = styled(motion.div)`
   .content {
     margin-top: 40px;
     max-width: 1300px;
+    width: 100%;
   }
   .footer {
     margin-top: 40px;

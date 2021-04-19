@@ -116,6 +116,9 @@ const StylesStyling = styled(motion.div)`
   }
   @media only screen and (min-width: 1023px) {
     margin-bottom: 100px;
+    .row1 {
+      flex-direction: row;
+    }
     .row1,
     .typography {
       min-height: 300px;

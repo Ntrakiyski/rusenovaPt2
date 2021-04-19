@@ -18,6 +18,18 @@ const StylesSketching = styled(motion.div)`
     img {
       margin-bottom: 50px;
     }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      max-width: 100%;
+      h1,
+      p {
+        max-width: 1040px;
+      }
+    }
   }
 `;
 
