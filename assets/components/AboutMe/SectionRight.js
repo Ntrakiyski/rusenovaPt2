@@ -90,10 +90,11 @@ const Styles = styled(motion.div)`
     .Flexresponse {
       display: flex;
       justify-content: space-between;
-      width: 1200px;
+      max-width: 1200px;
     }
     p {
-      width: 420px;
+      max-width: 420px;
+      min-width: 300px;
     }
   }
 `;

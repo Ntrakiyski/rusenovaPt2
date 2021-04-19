@@ -68,7 +68,7 @@ const Styles = styled(motion.div)`
     justify-content: center;
     align-items: center;
     .text {
-    display:flex;
+      display: flex;
     }
     .image {
       margin-bottom: 50px;
@@ -79,10 +79,11 @@ const Styles = styled(motion.div)`
     .response {
       display: flex;
       justify-content: space-between;
-      width: 1200px;
+      max-width: 1200px;
     }
     p {
-      width: 420px;
+      max-width: 420px;
+      min-width: 300px;
     }
     .heading {
       padding-left: 80px;

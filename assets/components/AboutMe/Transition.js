@@ -93,15 +93,25 @@ const Styles = styled(motion.div)`
     }
     .text {
       margin-left: 40px;
-      width: 420px;
+
+      p {
+        max-width: 420px;
+        min-width: 300px;
+      }
     }
     .image {
-      min-width: 580px;
+      min-width: 380px;
       max-width: 700px;
       margin: 80px 0;
     }
-    .heading p {
-      width: 80%;
+    .content {
+      width: 100%;
+    }
+    .heading {
+      max-width: 1200px;
+      p {
+        width: 80%;
+      }
     }
   }
 `;

@@ -15,22 +15,35 @@ export const Testemonial = () => {
         <div>
           <div className="quote">
             <span>“</span>
-            <div>
+            <div className="text">
               It was easy to work with Gloria because she is a communicative and
               team-oriented individual having customer-first thinking. She
               helped us not only designing but also defining our products and
               services.
+              {Width1200 && (
+                <>
+                  <div className="nameId">Stefan Dimitrov</div>
+                  <div className="proffesion">
+                    Digital Sales & Marketing Manager at Telenor Bulgaria
+                  </div>
+                </>
+              )}
             </div>
+
             <span>“</span>
           </div>
           <div className="imageDiv">
             {!Width1200 && (
-              <img src="/media/images/testemonial.png" alt="avatar image" />
+              <>
+                <img src="/media/images/testemonial.png" alt="avatar image" />
+                <div className="name">
+                  <div>Stefan Dimitrov</div>
+                  <span>
+                    Digital Sales & Marketing Manager at Telenor Bulgaria
+                  </span>
+                </div>
+              </>
             )}
-            <div className="name">
-              <div>Stefan Dimitrov</div>
-              <span>Digital Sales & Marketing Manager at Telenor Bulgaria</span>
-            </div>
           </div>
         </div>
         {Width1200 && (
@@ -56,13 +69,12 @@ const Styles = styled.div`
         align-self: flex-end;
       }
     }
-    div {
+    .text {
       margin-top: -50px;
       line-height: 150%;
       font-size: 18px;
       font-weight: 700;
       font-family: "Gilroy-ExtraBold";
-      font-style: italic;
     }
   }
   .imageDiv {
@@ -107,6 +119,7 @@ const Styles = styled.div`
       img {
         width: 174px;
         height: 174px;
+        margin-bottom: 135px;
       }
     }
     .quote {
@@ -117,10 +130,24 @@ const Styles = styled.div`
           align-self: flex-end;
         }
       }
-      div {
+      .text {
         font-size: 22px;
         margin-top: -210px;
         margin-left: 90px;
+      }
+      //desktop namer and proffesion
+      .nameId {
+        font-size: 22px;
+        font-weight: 700;
+        font-family: "Gilroy-ExtraBold";
+        margin-bottom: 10px;
+        margin-top: 30px;
+      }
+      .proffesion {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400 !important;
+        font-family: "Gilroy-Light";
       }
     }
     .name {

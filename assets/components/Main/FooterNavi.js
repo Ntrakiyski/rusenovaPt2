@@ -22,7 +22,7 @@ const StylesFooterNavi = styled(motion.div)`
   }
 
   .span {
-    font-size: 32px;
+    font-size: 23px;
     color: #727272 !important;
     width: 40px;
     margin-right: 15px;
@@ -31,9 +31,10 @@ const StylesFooterNavi = styled(motion.div)`
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .span {
       margin-right: 25px;
+      font-size: 32px;
     }
-    .menu a .menu div {
-      font-size: 44px;
+    .menu a {
+      font-size: 32px;
     }
   }
   @media only screen and (min-width: 1023px) {
