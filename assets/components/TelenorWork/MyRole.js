@@ -39,7 +39,7 @@ export const MyRole = () => {
   );
   const para2 = (
     <p>
-      Analizing and synthesise suser data and create user <span>personas</span>{" "}
+      Analizing and synthesise user data and create user <span>personas</span>{" "}
       and user story maps.
     </p>
   );
