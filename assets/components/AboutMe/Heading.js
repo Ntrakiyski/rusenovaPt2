@@ -24,6 +24,7 @@ const Styles = styled(motion.div)`
       font-size: 22px;
     }
   }
+
   @media only screen and (min-width: 1023px) {
     display: flex;
     align-items: center;
@@ -47,6 +48,8 @@ const Styles = styled(motion.div)`
       width: 75%;
       font-size: 18px;
     }
+  }
+  @media only screen and (max-width: 1024px) and (orientation: landscape) {
   }
 `;
 
