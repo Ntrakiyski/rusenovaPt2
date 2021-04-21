@@ -85,7 +85,7 @@ export const Emphaty = () => {
   return (
     <StylesEmphaty className="setPadding">
       <div className="heading">
-        <h1>Emphaty map</h1>
+        <h1>Еmpathy map</h1>
         <p>
           I summed up the insights collected from the user research in 4
           categories to understand the customer segment

@@ -36,7 +36,7 @@ export const Solution = () => {
       <h1>Solution</h1>
       <div className="subHead">Hypothesis</div>
       <div className="bullets ">
-        <div id="first">• Comunity oriented place </div>
+        <div id="first">• Community oriented place </div>
         <div id="seccond">• Content based on personal lifestyle </div>
         <div id="third">• Trip guides </div>
       </div>

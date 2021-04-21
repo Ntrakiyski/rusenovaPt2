@@ -137,7 +137,7 @@ export const Survey = () => {
           <h1>Online survey</h1>
           <div className="subHead">Quantative research</div>
           <p>
-            I wanted to validate my hyphotesis so I survayed 40+ individuals
+            I wanted to validate my hyphotesis so I surveyed 40+ individuals
             using Typeform
           </p>
         </div>
