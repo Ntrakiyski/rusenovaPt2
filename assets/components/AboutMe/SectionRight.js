@@ -69,7 +69,16 @@ const Styles = styled(motion.div)`
     flex-direction: column;
     padding-right: 110px;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .text,
+    .Flexresponse {
+      display: flex;
+      flex-direction: row;
+    }
+    .heading {
+      display: flex;
+      flex-direction: column;
+    }
   }
   @media only screen and (min-width: 1023px) {
     display: flex;
