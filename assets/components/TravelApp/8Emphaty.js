@@ -32,7 +32,7 @@ const StylesEmphaty = styled(motion.div)`
         margin-bottom: 25px;
         margin-top: 0;
         margin-right: 15px;
-        min-width: 250px;
+        width: 220px;
       }
     }
     .column:last-child {
@@ -73,6 +73,9 @@ const StylesEmphaty = styled(motion.div)`
       align-items: start;
       .column {
         max-width: 300px;
+      }
+      .title {
+        height: 40px;
       }
     }
   }
@@ -143,7 +146,7 @@ export const Emphaty = () => {
           />
         </div>
         <div className="column">
-          <div className="title">What the user wants to do</div>
+          <div className="title">Who the user wants to be </div>
           <InterviewBox text="• Inspiring " text3="• Herself / Himself" />
         </div>
       </div>

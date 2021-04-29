@@ -88,6 +88,11 @@ const Styles = styled(motion.div)`
 
     .text {
       display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      max-width: 1200px;
     }
     .image {
       margin-top: 0;
@@ -99,7 +104,7 @@ const Styles = styled(motion.div)`
     .Flexresponse {
       display: flex;
       justify-content: space-between;
-      max-width: 1200px;
+      width: 100%;
     }
     p {
       max-width: 420px;
