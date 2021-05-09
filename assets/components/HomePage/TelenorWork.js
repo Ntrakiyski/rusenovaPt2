@@ -6,17 +6,14 @@ import styled from "styled-components";
 
 import { motion } from "framer-motion";
 
-import { useMediaQuery } from "react-responsive";
-
-//Import images
+import { useMediaQuery } from "../CheckWidth";
 
 export const TelenorWork = () => {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
+  const Width1023 = useMediaQuery(1023);
+
   return (
     <ShowWorkStyles>
-      {Width1023 ? (
+      {!Width1023 ? (
         <div className="res setPadding">
           <div>
             <div className="heading">

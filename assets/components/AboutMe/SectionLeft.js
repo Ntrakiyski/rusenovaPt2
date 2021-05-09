@@ -3,18 +3,15 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-//Responsive query
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "../CheckWidth";
 
 export const SectionLeft = ({ imgSrc, title, paragraph, number }) => {
-  const TabletMode = useMediaQuery({
-    query: "(min-device-width: 1024px)",
-  });
+  const TabletMode = useMediaQuery(1023);
 
   return (
     <Styles className="setPadding">
       <motion.div className="text">
-        {!TabletMode && (
+        {TabletMode && (
           <>
             <span>- {number} -</span>
             <h3>{title}</h3>
@@ -25,7 +22,7 @@ export const SectionLeft = ({ imgSrc, title, paragraph, number }) => {
             <img src={imgSrc} alt="talk on a table" />
           </div>
           <motion.div className="heading">
-            {TabletMode && (
+            {!TabletMode && (
               <>
                 <span>- {number} -</span>
                 <h3>{title}</h3>

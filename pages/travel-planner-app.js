@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { useMediaQuery } from "react-responsive";
-
 import { FooterNavi } from "../assets/components/Main/FooterNavi";
 import { Nav } from "../assets/components/Main/Nav";
 import { NavRes } from "../assets/components/Main/NavRes";
@@ -29,7 +27,7 @@ import { Sketching } from "../assets/components/TravelApp/12Sketching";
 import { Styling } from "../assets/components/TravelApp/13Styles";
 import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
-import { MediaQuerySSR } from "react-responsive-ssr";
+import { useMediaQuery } from "../assets/components/CheckWidth";
 
 const TravelAppStyles = styled(motion.div)`
   margin-top: 60px;
@@ -57,18 +55,15 @@ const TravelAppStyles = styled(motion.div)`
 
 const TravelPage = () => {
   const [loaded, setLoaded] = useState(false);
+  const [changeLoc, setChangeLoc] = useState(false);
+
+  const Width1023 = useMediaQuery(1023);
+  const Width600 = useMediaQuery(600);
 
   useEffect(() => {
     setLoaded(true);
   }, [loaded]);
   //
-  const [changeLoc, setChangeLoc] = useState(false);
-  const Width600 = useMediaQuery({
-    query: "(max-device-width: 600px)",
-  });
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
 
   return (
     <TravelAppStyles
@@ -77,20 +72,16 @@ const TravelPage = () => {
       initial="hidden"
       animate="show"
     >
-      {loaded && (
-        <>
-          <MediaQuerySSR maxWidth={1023}>
-            <NavRes
-              changeLoc={changeLoc}
-              setChangeLoc={setChangeLoc}
-              bgColor="#14171b"
-            />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
-            <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
-        </>
+      {!Width1023 ? (
+        <Nav bgColor="#14171b" />
+      ) : (
+        <NavRes
+          changeLoc={changeLoc}
+          setChangeLoc={setChangeLoc}
+          bgColor="#14171b"
+        />
       )}
+
       {!changeLoc ? (
         loaded && (
           <>

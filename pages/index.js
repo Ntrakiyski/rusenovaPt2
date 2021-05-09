@@ -12,15 +12,13 @@ import { Footer } from "../assets/components/Main/Footer.js";
 import { Nav } from "../assets/components/Main/Nav.js";
 import { NavRes } from "../assets/components/Main/NavRes.js";
 
-import { useMediaQuery } from "react-responsive";
-import { MediaQuerySSR } from "react-responsive-ssr";
 import { Hamburger } from "../assets/components/Main/Hamburger.js";
 import { Testemonial } from "../assets/components/HomePage/Testemonial.js";
 
+import { useMediaQuery } from "../assets/components/CheckWidth";
+
 function Index() {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
+  const Width1023 = useMediaQuery(1023);
 
   const [changeLoc, setChangeLoc] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -32,16 +30,15 @@ function Index() {
     <Styles>
       {loaded && (
         <>
-          <MediaQuerySSR maxWidth={1023}>
+          {Width1023 ? (
             <NavRes
               changeLoc={changeLoc}
               setChangeLoc={setChangeLoc}
               bgColor="#14171b"
             />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
+          ) : (
             <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
+          )}
         </>
       )}
       <div className="content">

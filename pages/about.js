@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { MediaQuerySSR } from "react-responsive-ssr";
-import { useMediaQuery } from "react-responsive";
-
 import { Heading } from "../assets/components/AboutMe/Heading";
 import { SectionRight } from "../assets/components/AboutMe/SectionRight";
 import { SectionLeft } from "../assets/components/AboutMe/SectionLeft";
@@ -19,6 +16,7 @@ import { Footer } from "../assets/components/Main/Footer";
 import { Hamburger } from "../assets/components/Main/Hamburger";
 
 import { ContainerApp, Container } from "../assets/Animation.js";
+import { useMediaQuery } from "../assets/components/CheckWidth";
 
 const AboutMeStyles = styled(motion.div)`
   margin-top: 60px;
@@ -56,39 +54,33 @@ const AboutMeStyles = styled(motion.div)`
 `;
 
 const AboutMe = () => {
-  const [loaded, setLoaded] = useState(false);
+  const Width1023 = useMediaQuery(1023);
+  const Width600 = useMediaQuery(600);
 
+  const [loaded, setLoaded] = useState(false);
+  const [changeLoc, setChangeLoc] = useState(false);
   useEffect(() => {
     setLoaded(true);
   }, [loaded]);
-  const [changeLoc, setChangeLoc] = useState(false);
 
-  const Width600 = useMediaQuery({
-    query: "(min-device-width: 600px)",
-  });
   return (
     <AboutMeStyles
       variants={Width600 ? ContainerApp : Container}
       initial="hidden"
       animate="show"
     >
-      {loaded && (
-        <>
-          <MediaQuerySSR maxWidth={1023}>
-            <NavRes
-              changeLoc={changeLoc}
-              setChangeLoc={setChangeLoc}
-              bgColor="#14171b"
-            />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
-            <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
-        </>
+      {!Width1023 ? (
+        <Nav bgColor="#14171b" />
+      ) : (
+        <NavRes
+          changeLoc={changeLoc}
+          setChangeLoc={setChangeLoc}
+          bgColor="#14171b"
+        />
       )}
-      <div className="content">
-        {!changeLoc ? (
-          loaded && (
+      {loaded && (
+        <div className="content">
+          {!changeLoc ? (
             <>
               <Heading />
 
@@ -127,12 +119,12 @@ const AboutMe = () => {
                 <FooterNavi number="02" to="/" menu="Projects" funct={true} />
               </div>
             </>
-          )
-        ) : (
-          <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
-        )}
-        <Footer />
-      </div>
+          ) : (
+            <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
+          )}
+          <Footer />
+        </div>
+      )}
     </AboutMeStyles>
   );
 };

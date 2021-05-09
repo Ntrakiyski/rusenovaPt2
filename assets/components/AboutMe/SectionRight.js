@@ -3,26 +3,25 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "../CheckWidth";
 
 export const SectionRight = ({ imgSrc, title, paragraph, number }) => {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
+  const Width1023 = useMediaQuery(1023);
+  
 
   return (
     <Styles className="setPadding">
       <div className="text">
-        {!Width1023 && (
+        {Width1023 && (
           <div>
             <span>- {number} -</span>
             <h3>{title}</h3>
           </div>
         )}
-        {Width1023 ? (
+        {!Width1023 ? (
           <div className="Flexresponse">
             <motion.div className="heading">
-              {Width1023 && (
+              {!Width1023 && (
                 <div>
                   <span>- {number} -</span>
                   <h3>{title}</h3>
@@ -85,14 +84,10 @@ const Styles = styled(motion.div)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
 
     .text {
       display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      max-width: 1200px;
     }
     .image {
       margin-top: 0;

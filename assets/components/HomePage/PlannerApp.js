@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 
 import ReactPlayer from "react-player";
 
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "../CheckWidth";
 
 export const PlannerApp = () => {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
+  const Width1023 = useMediaQuery(1023);
+
   return (
     <ShowWorkStyles className="PlannerRes setPadding">
       <div className="res">
@@ -21,7 +20,7 @@ export const PlannerApp = () => {
             <h5>PROJECTS</h5>
           </div>
           <div className="content">
-            {!Width1023 && (
+            {Width1023 && (
               <div className="heading">
                 <span>- 01 -</span>
                 <h1>Travel</h1>

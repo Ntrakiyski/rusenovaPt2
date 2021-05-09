@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 // import BlueShirt from "assets/images/BlueShirt.png";
 
-import { useMediaQuery } from "react-responsive";
-
 export const MyStory = () => {
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
+  const [Width1023, setWidth1023] = useState("false");
+  const [width, setWidth] = useState(window.innerWidth);
+
+  //watch the width
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    if (width >= 1023) {
+      setWidth1023(true);
+    } else {
+      setWidth1023(false);
+    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
+
   return (
     <Styles className="setPadding">
       <div className="content">

@@ -15,16 +15,17 @@ import { Projects } from "../assets/components/TelenorWork/Projects";
 import { MyRole } from "../assets/components/TelenorWork/MyRole";
 import { Heading } from "../assets/components/TelenorWork/Heading";
 
-import { useMediaQuery } from "react-responsive";
-import { MediaQuerySSR } from "react-responsive-ssr";
-
 import { ContainerApp, Container } from "../assets/Animation.js";
+
+import { useMediaQuery } from "../assets/components/CheckWidth";
 
 const Styles = styled(motion.div)`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
 
   //Main title - My experience...
   h5 {
@@ -91,6 +92,8 @@ const Styles = styled(motion.div)`
 `;
 
 const TelenorPage = () => {
+  const Width1023 = useMediaQuery(1023);
+
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -98,55 +101,47 @@ const TelenorPage = () => {
   }, [loaded]);
   //
   const [changeLoc, setChangeLoc] = useState(false);
-  const Width1023 = useMediaQuery({
-    query: "(min-device-width: 1023px)",
-  });
-  const Width600 = useMediaQuery({
-    query: "(min-device-width: 600px)",
-  });
+
   return (
     <Styles
-      variants={Width600 ? ContainerApp : Container}
+      variants={Width1023 ? ContainerApp : Container}
       initial="hidden"
       animate="show"
     >
-      {loaded && (
-        <>
-          <MediaQuerySSR maxWidth={1023}>
-            <NavRes
-              changeLoc={changeLoc}
-              setChangeLoc={setChangeLoc}
-              bgColor="#14171b"
-            />
-          </MediaQuerySSR>
-          <MediaQuerySSR minWidth={1024}>
-            <Nav bgColor="#14171b" />
-          </MediaQuerySSR>
-        </>
+      {!Width1023 ? (
+        <Nav bgColor="#14171b" />
+      ) : (
+        <NavRes
+          changeLoc={changeLoc}
+          setChangeLoc={setChangeLoc}
+          bgColor="#14171b"
+        />
       )}
-      <div className="content">
-        {!changeLoc ? (
-          <>
-            <Heading />
-            <ThreeYears />
-            <MyRole />
-            <Projects />
-            <div className="foot">
-              <FooterNavi number="01" menu="About" to="/about" />
-              <FooterNavi number="02" menu="Projects" to="/" funct="true" />
-              <FooterNavi
-                number="03"
-                menu="Resume"
-                to="/media/GloriaPdf.pdf"
-                target={"_blank"}
-              />
-            </div>
-          </>
-        ) : (
-          <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
-        )}
-        <Footer />
-      </div>
+      {loaded && (
+        <div className="content">
+          {!changeLoc ? (
+            <>
+              <Heading />
+              <ThreeYears />
+              <MyRole />
+              <Projects />
+              <div className="foot">
+                <FooterNavi number="01" menu="About" to="/about" />
+                <FooterNavi number="02" menu="Projects" to="/" funct="true" />
+                <FooterNavi
+                  number="03"
+                  menu="Resume"
+                  to="/media/GloriaPdf.pdf"
+                  target={"_blank"}
+                />
+              </div>
+            </>
+          ) : (
+            <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />
+          )}
+          <Footer />
+        </div>
+      )}
     </Styles>
   );
 };
