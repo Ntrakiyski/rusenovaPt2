@@ -18,6 +18,8 @@ import { Hamburger } from "../assets/components/Main/Hamburger";
 import { ContainerApp, Container } from "../assets/Animation.js";
 import { useMediaQuery } from "../assets/components/CheckWidth";
 
+export const config = { unstable_runtimeJS: false };
+
 const AboutMeStyles = styled(motion.div)`
   margin-top: 60px;
   .content {
