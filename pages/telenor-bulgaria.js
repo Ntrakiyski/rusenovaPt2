@@ -19,7 +19,6 @@ import { ContainerApp, Container } from "../assets/Animation.js";
 
 import { useMediaQuery } from "../assets/components/CheckWidth";
 
-export const config = { unstable_runtimeJS: false };
 
 
 const Styles = styled(motion.div)`

@@ -17,7 +17,7 @@ import { Testemonial } from "../assets/components/HomePage/Testemonial.js";
 
 import { useMediaQuery } from "../assets/components/CheckWidth";
 
-export const config = { unstable_runtimeJS: false };
+
 
 function Index() {
   const Width1023 = useMediaQuery(1023);

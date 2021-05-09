@@ -29,8 +29,6 @@ import { SeccondPart } from "../assets/components/TravelApp/SeccondPart";
 
 import { useMediaQuery } from "../assets/components/CheckWidth";
 
-export const config = { unstable_runtimeJS: false };
-
 const TravelAppStyles = styled(motion.div)`
   margin-top: 60px;
   display: flex;
