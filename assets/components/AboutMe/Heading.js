@@ -60,11 +60,11 @@ export const Heading = () => {
         <h5>ABOUT</h5>
         <motion.div className="text">
           I am a Product Designer with over{" "}
-          <span className="spanHeading">three</span> years of experience in the
-          telecommunications industry designing{" "}
-          <span className="spanHeading">cross-platform</span> products,
-          including SaaS. My goal is to help businesses in creating products
-          that <span className="spanHeading">empower</span> people.
+          <span className="spanHeading">four</span> years of experience in the
+          Telecommunication and Information Technology & Services industry
+          designing <span className="spanHeading">cross-platform</span>{" "}
+          products, including SaaS. My goal is to help businesses in creating
+          products that <span className="spanHeading">empower</span> people.
         </motion.div>
         <h5 className="values">VALUES</h5>
       </div>

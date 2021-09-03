@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 
 import { init } from "../utils/ga";
+import ReactHeap from "reactjs-heap";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:description" content="Gloria Rusenova Portfolio" />
         <meta property="og:image" content="/media/thumbnail.jpg" />
         <link rel="apple-touch-icon" href="/media/logo192.png" />
+        <script type="text/javascript" src="/heat.js"></script>
 
         <meta
           name="viewport"
