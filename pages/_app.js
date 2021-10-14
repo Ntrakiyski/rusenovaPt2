@@ -2,15 +2,31 @@ import "../styles/globals.scss";
 import Head from "next/head";
 import Script from "next/script";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import { init } from "../utils/ga";
 
 function MyApp({ Component, pageProps }) {
+  const location = useRouter().pathname;
+  const [currentLoc, setCurrentLoc] = useState(" - home");
+
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
-  }, []);
-
+    console.log("location of the page is", location);
+    if (location === "/") {
+      setCurrentLoc(" - home");
+    }
+    if (location === "/about") {
+      setCurrentLoc(" - about");
+    }
+    if (location === "/travel-planner-app") {
+      setCurrentLoc(" - travel-planner-app");
+    }
+    if (location === "/telenor-bulgaria") {
+      setCurrentLoc(" - telenor-bulgaria");
+    }
+  }, [location]);
   return (
     <>
       <Script
@@ -30,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
 
       <Head>
-        <title>Gloria Rusenova Portfolio</title>
+        <title>Gloria Rusenova Portfolio{currentLoc}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Gloria Rusenova" />
         <meta name="description" content="Gloria Rusenova Portfolio" />
