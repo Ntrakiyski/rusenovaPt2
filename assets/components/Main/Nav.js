@@ -38,7 +38,7 @@ export const Nav = ({ bgColor, setChangeLoc, changeLoc }) => {
             </div>
           </a>
         </Link>
-        <div className="nav">
+        <div className="nav ">
           <Link href={"/"}>
             <a className="navItem">
               <motion.div
@@ -50,7 +50,7 @@ export const Nav = ({ bgColor, setChangeLoc, changeLoc }) => {
             </a>
           </Link>
           <Link href={"/about"}>
-            <a className="navItem">
+            <a className="navItem firstitem">
               {" "}
               <motion.div
                 className="middle"
@@ -61,11 +61,11 @@ export const Nav = ({ bgColor, setChangeLoc, changeLoc }) => {
             </a>
           </Link>
 
-          <a className="navItem" href="/media/GloriaPdf.pdf" target="_blank">
+          {/* <a className="navItem" href="/media/GloriaPdf.pdf" target="_blank">
             <motion.div >
               Resume
             </motion.div>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

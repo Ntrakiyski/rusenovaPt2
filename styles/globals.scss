@@ -214,10 +214,11 @@ h3 {
   .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     width: 600px;
+
     div {
       //navigation item
       cursor: pointer;
@@ -225,6 +226,7 @@ h3 {
     }
     a:last-child {
       margin-right: 100px;
+      margin-left: 40px;
     }
   }
   .logo {

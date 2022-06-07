@@ -52,12 +52,12 @@ function Index() {
             <Testemonial />
             <Toolbox />
             <FooterNavi number="01" menu="About" to="/about" />
-            <FooterNavi
+            {/* <FooterNavi
               number="02"
               menu="Resume"
               to="/media/GloriaPdf.pdf"
               target={"_blank"}
-            />
+            /> */}
           </>
         ) : (
           <Hamburger changeLoc={changeLoc} setChangeLoc={setChangeLoc} />

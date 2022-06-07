@@ -13,6 +13,7 @@ const HamburgerStyles = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  min-height: 50vh;
 
   .menues {
     text-align: center;
@@ -44,17 +45,6 @@ export const Hamburger = ({ setChangeLoc, changeLoc }) => {
       animate={{ x: 0, transition: { duration: 0.4 } }}
     >
       <div className="menues">
-        <Link href={"/"}>
-          <a>
-            <motion.div
-              onClick={Scroll}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Projects
-            </motion.div>
-          </a>
-        </Link>
         <Link href="/about">
           <a>
             <motion.div
@@ -66,11 +56,45 @@ export const Hamburger = ({ setChangeLoc, changeLoc }) => {
             </motion.div>
           </a>
         </Link>
-        <a href="/media/GloriaPdf.pdf" target="_blank">
+        <Link href={"/"}>
+          <a>
+            <motion.div
+              onClick={Scroll}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Projects
+            </motion.div>
+          </a>
+        </Link>
+        <Link href="/travel-planner-app">
+          <a>
+            <motion.div
+              onClick={AboutFunc}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Travel Planner App
+            </motion.div>
+          </a>
+        </Link>
+        <Link href="/telenor-bulgaria">
+          <a>
+            <motion.div
+              onClick={AboutFunc}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Telenor Bulgaria
+            </motion.div>
+          </a>
+        </Link>
+
+        {/* <a href="/media/GloriaPdf.pdf" target="_blank">
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             Resume
           </motion.div>
-        </a>
+        </a> */}
       </div>
     </HamburgerStyles>
   );

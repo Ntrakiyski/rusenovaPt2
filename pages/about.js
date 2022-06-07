@@ -110,12 +110,12 @@ const AboutMe = () => {
               <Transition />
 
               <div className="foot">
-                <FooterNavi
+                {/* <FooterNavi
                   number="01"
                   to="/media/GloriaPdf.pdf"
                   target={"_blank"}
                   menu="Resume"
-                />
+                /> */}
                 <FooterNavi number="02" to="/" menu="Projects" funct={true} />
               </div>
             </>

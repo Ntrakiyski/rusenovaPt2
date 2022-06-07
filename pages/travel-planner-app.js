@@ -114,12 +114,12 @@ const TravelPage = () => {
                 to="/telenor-bulgaria"
               />
               <FooterNavi number="02" menu="About" to="/about" />
-              <FooterNavi
+              {/* <FooterNavi
                 number="03"
                 menu="Resume"
                 to="/media/GloriaPdf.pdf"
                 target={"_blank"}
-              />
+              /> */}
             </div>
           </>
         )

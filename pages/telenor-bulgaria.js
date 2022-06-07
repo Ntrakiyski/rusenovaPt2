@@ -130,12 +130,12 @@ const TelenorPage = () => {
               <div className="foot">
                 <FooterNavi number="01" menu="About" to="/about" />
                 <FooterNavi number="02" menu="Projects" to="/" funct="true" />
-                <FooterNavi
+                {/* <FooterNavi
                   number="03"
                   menu="Resume"
                   to="/media/GloriaPdf.pdf"
                   target={"_blank"}
-                />
+                /> */}
               </div>
             </>
           ) : (
